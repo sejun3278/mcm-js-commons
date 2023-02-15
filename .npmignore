@@ -1,0 +1,7 @@
+src
+styles
+.babelrc
+.eslintrc.json
+next-env.d.ts
+next.config.js
+tsconfig.json

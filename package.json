@@ -1,6 +1,6 @@
 {
   "name": "sejun-next-with-typescript",
-  "version": "0.1.1",
+  "version": "0.2.3",
   "private": false,
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -29,6 +29,7 @@
     "@babel/core": "^7.20.12",
     "@babel/plugin-syntax-jsx": "^7.18.6",
     "@babel/preset-react": "^7.18.6",
+    "@types/node": "18.15.3",
     "@types/react": "18.0.28",
     "eslint": "8.34.0",
     "eslint-config-next": "13.1.6",

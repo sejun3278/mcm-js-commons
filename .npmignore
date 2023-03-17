@@ -4,4 +4,7 @@ styles
 .eslintrc.json
 next-env.d.ts
 next.config.js
-tsconfig.json
+.next
+pages
+tsconfig.tsbuildinfo
+yarn-error.log

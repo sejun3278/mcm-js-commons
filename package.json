@@ -1,13 +1,9 @@
 {
-  "name": "sejun-next-with-typescript",
-  "version": "0.1.1",
+  "name": "mcm-js-commons",
+  "version": "0.0.1",
   "private": false,
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/sejun3278/npm_publish_next_example"
-  },
   "author": {
     "name": "sejun3278",
     "email": "sejun3278@gmail.com"

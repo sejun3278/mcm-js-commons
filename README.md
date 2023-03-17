@@ -1,4 +1,4 @@
-This is Template of Nextjs publish for NPM
+Template of Nextjs publish for NPM
 
 I provide to Next.js with Typescript
 

@@ -1,16 +1,10 @@
 import styled from "@emotion/styled";
-import { CSSProperties } from "react";
 
 import CommonsHooksComponents from "../../hooks";
-
-interface IProps {
-  src: string; // 출력될 이미지 경로
-  styles?: CSSProperties; // 설정할 스타일
-  className?: string;
-}
+import { ImageUnitTypes } from "../../types/units";
 
 // img 태그를 이용한 이미지 컴포넌트, 오른쪽 버튼 비활성화 기능
-export default function _Image({ src, styles, className }: IProps) {
+export default function _Image({ src, styles, className }: ImageUnitTypes) {
   const { getAllComponentsClassName } = CommonsHooksComponents();
 
   return (

@@ -9,8 +9,20 @@ function CommonsHooksComponents() {
         var _className = "".concat(defaultClass).concat(className ? " ".concat(className) : "");
         return _className;
     };
+    // CamelCase 적용된 문자열을 기존의 하이픈 문법으로 변경하기
+    var getOriginTemplate = function (str) {
+        return Array.from(str).reduce(function (acc, cur, i) {
+            var code = cur.charCodeAt(0);
+            if (i > 0 && code >= 65 && code <= 90) {
+                // 0번째 인덱스 제외하고 대문자일 경우
+                cur = "-".concat(cur.toLowerCase());
+            }
+            return acc + cur;
+        }, "");
+    };
     return {
         getAllComponentsClassName: getAllComponentsClassName,
+        getOriginTemplate: getOriginTemplate,
     };
 }
 exports.default = CommonsHooksComponents;

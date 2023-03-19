@@ -21,6 +21,7 @@
     "outDir": "./dist",
     "incremental": true
   },
+<<<<<<< HEAD
   "include": [
     "next-env.d.ts",
     "src/**/*.ts",
@@ -29,4 +30,8 @@
   "exclude": [
     "node_modules"
   ]
+=======
+  "include": ["next-env.d.ts", "src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["node_modules"]
+>>>>>>> 1ededfd68ca784ebf6cc02b3cf528bbb7991f80e
 }

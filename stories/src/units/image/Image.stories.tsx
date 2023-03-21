@@ -13,14 +13,14 @@ export default {
 const Template = (args) => <SB_Image {...args} />;
 
 // 클래스 네임 적용
-export const getClassname = Template.bind({});
-getClassname.args = {
+export const setClassname = Template.bind({});
+setClassname.args = {
   className: "_sb_image_",
 };
 
 // 스타일 적용
-export const getStyles = Template.bind({});
-getStyles.args = {
+export const setStyles = Template.bind({});
+setStyles.args = {
   styles: {
     width: "300px",
     height: "300px",
@@ -28,8 +28,8 @@ getStyles.args = {
 };
 
 // 이미지 적용
-export const getOtherImage = Template.bind({});
-getOtherImage.args = {
+export const setOtherImage = Template.bind({});
+setOtherImage.args = {
   src: "http://www.nongsaro.go.kr/cms_contents/976/20151215141317605.gif",
   styles: {
     width: "300px",

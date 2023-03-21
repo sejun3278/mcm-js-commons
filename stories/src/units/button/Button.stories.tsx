@@ -14,15 +14,15 @@ export default {
 const Template = (args: ButtonUnitTypes) => <SB_Button {...args} />;
 
 // 클래스 네임 적용
-export const getClassname = Template.bind({});
-getClassname.args = {
+export const setClassname = Template.bind({});
+setClassname.args = {
   children: <span>Button with className</span>,
   className: "_sb_btn_",
 };
 
 // 스타일 적용
-export const getStyles = Template.bind({});
-getStyles.args = {
+export const setStyles = Template.bind({});
+setStyles.args = {
   children: <span>Button with styles</span>,
   styles: {
     backgroundColor: "pink",
@@ -30,15 +30,15 @@ getStyles.args = {
 };
 
 // disable 적용
-export const getDisable = Template.bind({});
-getDisable.args = {
+export const setDisable = Template.bind({});
+setDisable.args = {
   children: <span>Button with disable</span>,
   isDisable: true,
 };
 
 // onClickEvent 적용
-export const getClickEvent = Template.bind({});
-getClickEvent.args = {
+export const setClickEvent = Template.bind({});
+setClickEvent.args = {
   children: <span>Button with onClickEvent</span>,
   onClickEvent: () => {
     alert(`버튼 이벤트가 작동됩니다.`);

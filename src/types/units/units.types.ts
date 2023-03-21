@@ -26,3 +26,16 @@ export type TitleUnitTypes = {
   titleLevel?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6"; // 태그 레벨 선택 (h1이 디폴트 값)
 } & CommonsTypes &
   ChildrenType;
+
+// anchor 태그 컴포넌트 타입
+export type AnchorUnitTypes = {
+  href: string; // 실행할 웹 페이지의 경로
+  notTarget?: boolean; // target의 _blank값을 사용하지 않을 것인지 (default : false)
+} & CommonsTypes &
+  ChildrenType;
+
+// Link 태그 컴포넌트 타입
+export type LinkUnitTypes = {
+  href: string; // 이동할 페이지
+} & CommonsTypes &
+  ChildrenType;

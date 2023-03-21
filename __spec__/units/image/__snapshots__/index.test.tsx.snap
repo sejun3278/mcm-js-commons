@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Image Units Page Sanpshot 1`] = `
+<div>
+  <img
+    class="mcm-image-unit jest-image css-msby2z"
+    src="/images/commons/logo/MCM_white.logo.png"
+  />
+</div>
+`;

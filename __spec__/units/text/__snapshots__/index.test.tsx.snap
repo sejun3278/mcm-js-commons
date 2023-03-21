@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text Page Snapshot - p 1`] = `
+<div>
+  <p
+    class="mcm-p-unit css-pzlb5d"
+  >
+    p 태그를 렌더합니다.
+  </p>
+</div>
+`;
+
+exports[`Text Page Snapshot - span 1`] = `
+<div>
+  <span
+    class="mcm-span-unit"
+  >
+    span 태그를 렌더합니다.
+  </span>
+</div>
+`;
+
+exports[`Text Page Snapshot 1`] = `
+<div>
+  <span
+    class="mcm-span-unit"
+  >
+    span 태그를 렌더합니다.
+  </span>
+</div>
+`;
+
+exports[`Text Page Snapshot 2`] = `
+<div>
+  <p
+    class="mcm-p-unit css-pzlb5d"
+  >
+    p 태그를 렌더합니다.
+  </p>
+</div>
+`;

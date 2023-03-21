@@ -4,6 +4,8 @@ import {
   TextUnitTypes,
   TextUnitAddTypes,
   TitleUnitTypes,
+  AnchorUnitTypes,
+  LinkUnitTypes,
 } from "./units.types";
 
 export type {
@@ -12,4 +14,6 @@ export type {
   TextUnitTypes,
   TextUnitAddTypes,
   TitleUnitTypes,
+  AnchorUnitTypes,
+  LinkUnitTypes,
 };

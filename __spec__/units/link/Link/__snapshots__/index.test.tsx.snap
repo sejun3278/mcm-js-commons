@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link Tag Page Check have a tag 1`] = `
+<div>
+  <a
+    class="mcm-link-unit jest-link css-1h5x3dy"
+    href="/modules/modal"
+  >
+    모달로 이동하기
+  </a>
+</div>
+`;
+
+exports[`Link Tag Page Snapshot 1`] = `
+<div>
+  <a
+    class="mcm-link-unit css-1h5x3dy"
+    href="/modules/modal"
+  >
+    모달로 이동하기
+  </a>
+</div>
+`;

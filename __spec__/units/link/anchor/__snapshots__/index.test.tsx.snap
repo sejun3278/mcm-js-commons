@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Anchor Tag Page Snapshot 1`] = `
+<div>
+  <a
+    class="mcm-anchor-unit css-1y7ig4m"
+    href="https://www.naver.com"
+    rel="noreferrer"
+    target="_blank"
+  >
+     네이버로 이동 
+  </a>
+</div>
+`;

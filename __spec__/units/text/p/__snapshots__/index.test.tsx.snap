@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PText tag Units Page Sanpshot 1`] = `
+<div>
+  <p
+    class="mcm-p-unit jest-p-test css-pzlb5d"
+    style="color: red;"
+  >
+    p 태그 테스트
+  </p>
+</div>
+`;

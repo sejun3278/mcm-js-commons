@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Units Page Check have button tag 1`] = `
+<div>
+  <button
+    class="cmm-button-unit jest-disable-btn css-uaj08t"
+    role="button_click_event"
+  >
+    현재는 사용할 수 없는 버튼입니다.
+  </button>
+</div>
+`;
+
+exports[`Button Units Page Snapshot 1`] = `
+<div>
+  <button
+    class="cmm-button-unit jest-btn css-19ngahp"
+    role="button_click_event"
+  >
+    버튼 테스트
+  </button>
+</div>
+`;

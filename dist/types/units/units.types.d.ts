@@ -1,7 +1,5 @@
-/// <reference types="react" />
 import { CommonsTypes, ChildrenType } from "../commons.type";
 export type ButtonUnitTypes = {
-    children: React.ReactNode;
     onClickEvent: () => void;
     isDisable?: boolean;
 } & CommonsTypes & ChildrenType;
@@ -13,6 +11,7 @@ export interface TextUnitAddTypes {
 }
 export interface TextUnitDefaultType {
     dangerouslySetInnerHTML?: string;
+    isError?: boolean;
 }
 export type TextUnitTypes = TextUnitDefaultType & CommonsTypes & ChildrenType;
 export type TitleUnitTypes = {
@@ -25,3 +24,9 @@ export type AnchorUnitTypes = {
 export type LinkUnitTypes = {
     href: string;
 } & CommonsTypes & ChildrenType;
+export type CloseButtonTypes = {
+    onClickEvent: () => void;
+    buttonSize?: string;
+    buttonWeight?: string;
+    disable?: boolean;
+} & CommonsTypes;

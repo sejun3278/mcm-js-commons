@@ -6,6 +6,7 @@ import {
   TitleUnitTypes,
   AnchorUnitTypes,
   LinkUnitTypes,
+  CloseButtonTypes,
 } from "./units.types";
 
 export type {
@@ -16,4 +17,5 @@ export type {
   TitleUnitTypes,
   AnchorUnitTypes,
   LinkUnitTypes,
+  CloseButtonTypes,
 };

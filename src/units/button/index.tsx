@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 
+import _SpanText from "../text/span";
 import CommonsHooksComponents from "../../hooks";
 import { ButtonUnitTypes } from "../../types/units";
 
@@ -14,6 +15,7 @@ export default function _Button({
   const { getAllComponentsClassName } = CommonsHooksComponents();
 
   return (
+    // (children && (
     <Button
       className={getAllComponentsClassName("cmm-button-unit", className)}
       onClick={(!isDisable && onClickEvent) || undefined}
@@ -23,6 +25,7 @@ export default function _Button({
     >
       {children}
     </Button>
+    // )) || <_SpanText isError={true}>* children props가 필요합니다.</_SpanText>
   );
 }
 

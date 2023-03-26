@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import { CommonsTypes, ChildrenType } from "../commons.type";
 
 // 버튼 컴포넌트 타입
@@ -18,8 +19,13 @@ export interface TextUnitAddTypes {
   type?: "p" | "span"; // 출력할 태그명, p를 입력하면 p태그로 출력 (default : span)
 }
 
+// p, span text 컴포넌트에 전달되는 타입
+export interface TextUnitDefaultType {
+  dangerouslySetInnerHTML?: string; // dangerouslySetInnerHTML 기능 사용을 위한 문자열
+}
+
 // p, span 텍스트 태그 컴포넌트 타입
-export type TextUnitTypes = CommonsTypes & ChildrenType;
+export type TextUnitTypes = TextUnitDefaultType & CommonsTypes & ChildrenType;
 
 // 타이틀 태그 컴포넌트 타입
 export type TitleUnitTypes = {

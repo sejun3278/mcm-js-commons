@@ -4,5 +4,5 @@ export interface CommonsTypes {
     styles?: CSSProperties;
 }
 export interface ChildrenType {
-    children: React.ReactNode;
+    children?: React.ReactNode;
 }

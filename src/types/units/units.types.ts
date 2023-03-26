@@ -1,9 +1,7 @@
-import { ReactNode } from "react";
 import { CommonsTypes, ChildrenType } from "../commons.type";
 
 // 버튼 컴포넌트 타입
 export type ButtonUnitTypes = {
-  children: React.ReactNode;
   onClickEvent: () => void; // 실행할 클릭 이벤트
   isDisable?: boolean; // 비활성화 여부, true일 경우 비활성화 (default : false)
 } & CommonsTypes &
@@ -22,6 +20,7 @@ export interface TextUnitAddTypes {
 // p, span text 컴포넌트에 전달되는 타입
 export interface TextUnitDefaultType {
   dangerouslySetInnerHTML?: string; // dangerouslySetInnerHTML 기능 사용을 위한 문자열
+  isError?: boolean; // 에러 상태를 표현합니다.
 }
 
 // p, span 텍스트 태그 컴포넌트 타입
@@ -45,3 +44,11 @@ export type LinkUnitTypes = {
   href: string; // 이동할 페이지
 } & CommonsTypes &
   ChildrenType;
+
+// CloseButton 태그 컴포넌트 타입
+export type CloseButtonTypes = {
+  onClickEvent: () => void; // 클릭 이벤트
+  buttonSize?: string; // 버튼 사이즈 (width, height에 적용) (default : 15px)
+  buttonWeight?: string; // 버튼의 굵기 조절 (default : 1px)
+  disable?: boolean; // 닫기 비활성화 (default : false)
+} & CommonsTypes;

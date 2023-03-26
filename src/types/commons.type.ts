@@ -9,5 +9,5 @@ export interface CommonsTypes {
 
 // children 타입 저장
 export interface ChildrenType {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }

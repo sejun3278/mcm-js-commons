@@ -24,8 +24,26 @@ export default function CommonsHooksComponents() {
     }, "");
   };
 
+  // 스타일 적용을 위한 px 설정
+  const getPXForm = (data: number | string, minimun?: string): string => {
+    // data : px를 적용시킬 데이터, 숫자와 문자 타입으로 받는다.
+    // minimum : px로 적용했을 때 제일 작은 단위의 수, 해당 값보다 작을 경우 minimum으로 최종 리턴
+    let num = Number(String(data).split("px")[0]);
+    console.log(data, num, minimun);
+
+    if (minimun) {
+      const _minimun = Number(minimun.split("px")[0]);
+      if (_minimun > num) {
+        num = _minimun;
+      }
+    }
+
+    return `${num}px`;
+  };
+
   return {
     getAllComponentsClassName,
     getOriginTemplate,
+    getPXForm,
   };
 }

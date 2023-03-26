@@ -13,3 +13,7 @@ export default function _Text(props: TextUnitTypes & TextUnitAddTypes) {
     <_SpanText {...props}>{children}</_SpanText>
   );
 }
+
+export interface TextStyleTypes {
+  isError?: boolean;
+}

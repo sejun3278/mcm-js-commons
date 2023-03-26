@@ -19,7 +19,9 @@ var hooks_1 = __importDefault(require("../../../hooks"));
 // span 태그를 출력하는 컴포넌트
 function _SpanText(props) {
     var getAllComponentsClassName = (0, hooks_1.default)().getAllComponentsClassName;
-    var styles = props.styles, className = props.className, children = props.children;
-    return ((0, jsx_runtime_1.jsx)("span", __assign({ style: styles, className: getAllComponentsClassName("mcm-span-unit", className) }, { children: children })));
+    var styles = props.styles, className = props.className, children = props.children, dangerouslySetInnerHTML = props.dangerouslySetInnerHTML;
+    return ((0, jsx_runtime_1.jsx)("span", __assign({ style: styles, className: getAllComponentsClassName("mcm-span-unit", className), dangerouslySetInnerHTML: dangerouslySetInnerHTML
+            ? { __html: dangerouslySetInnerHTML || "" }
+            : undefined }, { children: (!dangerouslySetInnerHTML && children) || undefined })));
 }
 exports.default = _SpanText;

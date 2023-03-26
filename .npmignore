@@ -8,3 +8,5 @@ next.config.js
 pages
 tsconfig.tsbuildinfo
 yarn-error.log
+.storybook
+__spec__

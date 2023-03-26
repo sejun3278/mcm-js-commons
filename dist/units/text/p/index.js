@@ -24,8 +24,10 @@ var styled_1 = __importDefault(require("@emotion/styled"));
 // p 태그를 출력하는 컴포넌트
 function _PText(props) {
     var getAllComponentsClassName = (0, hooks_1.default)().getAllComponentsClassName;
-    var styles = props.styles, className = props.className, children = props.children;
-    return ((0, jsx_runtime_1.jsx)(P, __assign({ style: styles, className: getAllComponentsClassName("mcm-p-unit", className) }, { children: children })));
+    var styles = props.styles, className = props.className, children = props.children, dangerouslySetInnerHTML = props.dangerouslySetInnerHTML;
+    return ((0, jsx_runtime_1.jsx)(P, __assign({ style: styles, className: getAllComponentsClassName("mcm-p-unit", className), dangerouslySetInnerHTML: dangerouslySetInnerHTML
+            ? { __html: dangerouslySetInnerHTML || "" }
+            : undefined }, { children: (!dangerouslySetInnerHTML && children) || undefined })));
 }
 exports.default = _PText;
 var P = styled_1.default.p(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  margin: 0px;\n"], ["\n  margin: 0px;\n"])));

@@ -11,7 +11,10 @@ export type ImageUnitTypes = {
 export interface TextUnitAddTypes {
     type?: "p" | "span";
 }
-export type TextUnitTypes = CommonsTypes & ChildrenType;
+export interface TextUnitDefaultType {
+    dangerouslySetInnerHTML?: string;
+}
+export type TextUnitTypes = TextUnitDefaultType & CommonsTypes & ChildrenType;
 export type TitleUnitTypes = {
     titleLevel?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 } & CommonsTypes & ChildrenType;

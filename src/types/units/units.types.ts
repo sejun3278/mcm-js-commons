@@ -17,14 +17,19 @@ export interface TextUnitAddTypes {
   type?: "p" | "span"; // 출력할 태그명, p를 입력하면 p태그로 출력 (default : span)
 }
 
-// p, span text 컴포넌트에 전달되는 타입
-export interface TextUnitDefaultType {
-  dangerouslySetInnerHTML?: string; // dangerouslySetInnerHTML 기능 사용을 위한 문자열
+// 에러 표시용 타입
+export interface TextErrorType {
   isError?: boolean; // 에러 상태를 표현합니다.
 }
 
 // p, span 텍스트 태그 컴포넌트 타입
-export type TextUnitTypes = TextUnitDefaultType & CommonsTypes & ChildrenType;
+export type TextUnitTypes = TextErrorType & CommonsTypes & ChildrenType;
+
+// p, span + html 컴포넌트 타입
+export type TextHTMLUnitTypes = {
+  dangerouslySetInnerHTML: string; // dangerouslySetInnerHTML 속성에 전달될 html 문자열
+} & TextErrorType &
+  CommonsTypes;
 
 // 타이틀 태그 컴포넌트 타입
 export type TitleUnitTypes = {
@@ -50,5 +55,6 @@ export type CloseButtonTypes = {
   onClickEvent: () => void; // 클릭 이벤트
   buttonSize?: string; // 버튼 사이즈 (width, height에 적용) (default : 15px)
   buttonWeight?: string; // 버튼의 굵기 조절 (default : 1px)
+  buttonColor?: string; // 버튼의 색상 조절 (default : black)
   disable?: boolean; // 닫기 비활성화 (default : false)
 } & CommonsTypes;

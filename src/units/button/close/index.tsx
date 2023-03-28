@@ -9,6 +9,7 @@ export default function _CloseButton({
   className,
   buttonSize, // 버튼 사이즈
   buttonWeight, // 버튼 굵기 조절
+  buttonColor,
   disable, // 닫기 비활성화
   onClickEvent,
 }: CloseButtonTypes) {
@@ -19,6 +20,7 @@ export default function _CloseButton({
       className={getAllComponentsClassName("mcm-close-button-unit", className)}
       buttonSize={getPXForm(buttonSize || "15px", "15px")}
       buttonWeight={getPXForm(buttonWeight || "1px", "1px")}
+      buttonColor={buttonColor || "black"}
       onClick={(!disable && onClickEvent) || undefined}
       disable={disable}
     />
@@ -29,6 +31,7 @@ interface StyleTypes {
   buttonSize?: string;
   buttonWeight?: string;
   disable?: boolean;
+  buttonColor?: string;
 }
 
 export const ButtonWrapper = styled.button`
@@ -68,6 +71,11 @@ export const ButtonWrapper = styled.button`
       props.disable && {
         cursor: "not-allowed",
         backgroundColor: "#666666",
+      }}
+
+    ${(props) =>
+      props.buttonColor && {
+        backgroundColor: props.buttonColor,
       }}
   }
 

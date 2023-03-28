@@ -1,6 +1,6 @@
 {
   "name": "mcm-js-commons",
-  "version": "0.0.13",
+  "version": "0.0.20",
   "private": false,
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -22,6 +22,7 @@
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
+    "dompurify": "^3.0.1",
     "next": "13.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0"
@@ -41,6 +42,9 @@
     "@storybook/testing-library": "^0.0.13",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
+    "@types/dompurify": "^3.0.0",
+    "@types/jest": "^29.5.0",
+    "@types/mocha": "^10.0.1",
     "@types/node": "18.15.3",
     "@types/react": "18.0.28",
     "@types/react-dom": "^18.0.11",
@@ -51,6 +55,7 @@
     "jest": "^29.5.0",
     "jest-environment-jsdom": "^29.5.0",
     "react-docgen-typescript-loader": "^3.7.2",
+    "ts-jest": "^29.0.5",
     "typescript": "4.9.5"
   }
 }

@@ -1,6 +1,8 @@
 // 공용으로 사용되는 함수들이 저장되는 컴포넌트입니다.
-
 export default function CommonsHooksComponents() {
+  const { useRouter } = require("next/router");
+  const router = useRouter;
+
   // 컴포넌트 클래스 네임 완성
   const getAllComponentsClassName = (
     defaultClass: string,
@@ -29,8 +31,6 @@ export default function CommonsHooksComponents() {
     // data : px를 적용시킬 데이터, 숫자와 문자 타입으로 받는다.
     // minimum : px로 적용했을 때 제일 작은 단위의 수, 해당 값보다 작을 경우 minimum으로 최종 리턴
     let num = Number(String(data).split("px")[0]);
-    console.log(data, num, minimun);
-
     if (minimun) {
       const _minimun = Number(minimun.split("px")[0]);
       if (_minimun > num) {
@@ -41,9 +41,27 @@ export default function CommonsHooksComponents() {
     return `${num}px`;
   };
 
+  // router 객체 리턴하기
+  const getRouter = () => () => {
+    return router;
+  };
+
+  // 주소 query 끝 제이든 케이스 리턴하기
+  const getModuleNamewithJadenCase = (): string => {
+    let moduleName = router.pathname.split("/").at(-1);
+
+    if (moduleName) {
+      moduleName = moduleName[0].toUpperCase() + moduleName.substring(1);
+      return moduleName;
+    }
+    return "";
+  };
+
   return {
     getAllComponentsClassName,
     getOriginTemplate,
     getPXForm,
+    getRouter,
+    getModuleNamewithJadenCase,
   };
 }

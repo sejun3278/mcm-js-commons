@@ -7,12 +7,14 @@ import {
   AnchorUnitTypes,
   LinkUnitTypes,
   CloseButtonTypes,
+  TextHTMLUnitTypes,
 } from "./units.types";
 
 export type {
   ButtonUnitTypes,
   ImageUnitTypes,
   TextUnitTypes,
+  TextHTMLUnitTypes,
   TextUnitAddTypes,
   TitleUnitTypes,
   AnchorUnitTypes,

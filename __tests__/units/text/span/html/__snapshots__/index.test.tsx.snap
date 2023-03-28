@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SpanText Units Page Check has span tag 1`] = `
+<div>
+  <span
+    class="mcm-span-unit jest-span-test css-1oteowz"
+    style="color: red;"
+  >
+    <b>
+      span tag + html 테스트
+    </b>
+  </span>
+</div>
+`;
+
+exports[`SpanText Units Page Sanpshot 1`] = `
+<div>
+  <span
+    class="mcm-span-unit jest-span-test css-1oteowz"
+    style="color: red;"
+  >
+    <b>
+      span tag + html 테스트
+    </b>
+  </span>
+</div>
+`;

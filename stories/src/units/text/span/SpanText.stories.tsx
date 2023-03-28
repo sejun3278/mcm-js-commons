@@ -40,3 +40,10 @@ setChildren.args = {
     </b>
   ),
 };
+
+// error 메세지 적용
+export const setError = Template.bind({});
+setError.args = {
+  isError: true,
+  children: <span>에러 메세지입니다.</span>,
+};

@@ -1,3 +1,4 @@
+import styled from "@emotion/styled";
 import { TextUnitTypes, TextUnitAddTypes } from "../../types/units";
 
 import _PText from "./p";
@@ -14,6 +15,26 @@ export default function _Text(props: TextUnitTypes & TextUnitAddTypes) {
   );
 }
 
-export interface TextStyleTypes {
+export interface StyleTypes {
   isError?: boolean;
 }
+
+// P 텍스트 스타일
+export const PText = styled.p`
+  margin: 0px;
+
+  ${(props: StyleTypes) =>
+    props.isError && {
+      color: "#B46060",
+      fontWeight: "700",
+    }}
+`;
+
+// Span 텍스트 스타일
+export const SpanText = styled.span`
+  ${(props: StyleTypes) =>
+    props.isError && {
+      color: "#B46060",
+      fontWeight: "700",
+    }}
+`;

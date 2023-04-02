@@ -1,8 +1,5 @@
 // 공용으로 사용되는 함수들이 저장되는 컴포넌트입니다.
 export default function CommonsHooksComponents() {
-  const { useRouter } = require("next/router");
-  const router = useRouter;
-
   // 컴포넌트 클래스 네임 완성
   const getAllComponentsClassName = (
     defaultClass: string,
@@ -43,12 +40,18 @@ export default function CommonsHooksComponents() {
 
   // router 객체 리턴하기
   const getRouter = () => () => {
+    const { useRouter } = require("next/router");
+    const router = useRouter;
+
     return router;
   };
 
   // 주소 query 끝 제이든 케이스 리턴하기
   const getModuleNamewithJadenCase = (): string => {
-    let moduleName = router.pathname.split("/").at(-1);
+    const { useRouter } = require("next/router");
+    const router = useRouter;
+
+    let moduleName = router?.pathname?.split("/").at(-1);
 
     if (moduleName) {
       moduleName = moduleName[0].toUpperCase() + moduleName.substring(1);

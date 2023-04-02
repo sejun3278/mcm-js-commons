@@ -12,6 +12,7 @@ export default function _CloseButton({
   buttonColor,
   disable, // 닫기 비활성화
   onClickEvent,
+  styles,
 }: CloseButtonTypes) {
   const { getAllComponentsClassName, getPXForm } = CommonsHooksComponents();
 
@@ -23,6 +24,7 @@ export default function _CloseButton({
       buttonColor={buttonColor || "black"}
       onClick={(!disable && onClickEvent) || undefined}
       disable={disable}
+      style={styles}
     />
   );
 }

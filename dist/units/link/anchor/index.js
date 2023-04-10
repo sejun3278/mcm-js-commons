@@ -1,3 +1,4 @@
+"use strict";
 var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
     if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
     return cooked;
@@ -13,15 +14,19 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-import { jsx as _jsx } from "react/jsx-runtime";
-import styled from "@emotion/styled";
-import CommonsHooksComponents from "../../../hooks";
-import _Error from "../../error";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var jsx_runtime_1 = require("react/jsx-runtime");
+var styled_1 = __importDefault(require("@emotion/styled"));
+var hooks_1 = require("../../../hooks");
+var error_1 = __importDefault(require("../../error"));
 // a태그를 사용해 타 웹 사이트 이동
-export default function _Anchor(props) {
-    var getAllComponentsClassName = CommonsHooksComponents().getAllComponentsClassName;
+function _Anchor(props) {
     var children = props.children, href = props.href, className = props.className, notTarget = props.notTarget, styles = props.styles;
-    return (_jsx(_Error, __assign({ propsList: __assign({}, props), requiredList: ["href"], mouduleName: "_Anchor" }, { children: _jsx(Anchor, __assign({ style: styles, href: href, target: notTarget ? "_self" : "_blank", rel: "noreferrer", className: getAllComponentsClassName("mcm-anchor-unit", className) }, { children: children })) })));
+    return ((0, jsx_runtime_1.jsx)(error_1.default, __assign({ propsList: __assign({}, props), requiredList: ["href"], mouduleName: "_Anchor" }, { children: (0, jsx_runtime_1.jsx)(Anchor, __assign({ style: styles, href: href, target: notTarget ? "_self" : "_blank", rel: "noreferrer", className: (0, hooks_1.getAllComponentsClassName)("mcm-anchor-unit", className) }, { children: children })) })));
 }
-var Anchor = styled.a(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  color: blue;\n  text-decoration: underline;\n"], ["\n  color: blue;\n  text-decoration: underline;\n"])));
+exports.default = _Anchor;
+var Anchor = styled_1.default.a(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  color: blue;\n  text-decoration: underline;\n"], ["\n  color: blue;\n  text-decoration: underline;\n"])));
 var templateObject_1;

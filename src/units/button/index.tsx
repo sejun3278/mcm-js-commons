@@ -3,12 +3,11 @@ import styled from "@emotion/styled";
 import _SpanText from "../text/span";
 import _Error from "../error";
 
-import CommonsHooksComponents from "../../hooks";
+import { getAllComponentsClassName } from "../../hooks";
 import { ButtonUnitTypes } from "../../types/units";
 
 // button 태그로 렌더하는 컴포넌트
 export default function _Button(props: ButtonUnitTypes) {
-  const { getAllComponentsClassName } = CommonsHooksComponents();
   const { children, className, onClickEvent, styles, isDisable } = props;
 
   return (

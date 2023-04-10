@@ -1,4 +1,4 @@
-import CommonsHooksComponents from "../../hooks";
+import { getAllComponentsClassName, getOriginTemplate } from "../../hooks";
 import { TitleUnitTypes } from "../../types/units";
 
 const filter = Array.from(new Array(5), (_, i) => `h${i + 2}`);
@@ -9,9 +9,6 @@ export default function _Title({
   className,
   titleLevel,
 }: TitleUnitTypes) {
-  const { getAllComponentsClassName, getOriginTemplate } =
-    CommonsHooksComponents();
-
   // 렌더할 태그명
   const TitleTag =
     (filter.includes(titleLevel || "h1") ? titleLevel : "h1") || "h1";

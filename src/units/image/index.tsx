@@ -1,12 +1,11 @@
 import styled from "@emotion/styled";
 
-import CommonsHooksComponents from "../../hooks";
+import { getAllComponentsClassName } from "../../hooks";
 import { ImageUnitTypes } from "../../types/units";
 import _Error from "../error";
 
 // img 태그를 이용한 이미지 컴포넌트, 오른쪽 버튼 비활성화 기능
 export default function _Image(props: ImageUnitTypes) {
-  const { getAllComponentsClassName } = CommonsHooksComponents();
   const { src, styles, className } = props;
 
   return (

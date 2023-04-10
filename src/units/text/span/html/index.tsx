@@ -2,13 +2,12 @@ import { useState, useEffect } from "react";
 import { SpanText } from "../..";
 import DOMPurify from "dompurify";
 
-import CommonsHooksComponents from "../../../../hooks";
+import { getAllComponentsClassName } from "../../../../hooks";
 import { TextHTMLUnitTypes } from "../../../../types/units";
 
 // dangerouslySetInnerHTML 속성을 사용할 수 있는 Span Text Component
 export default function _SpanTextWithHtml(props: TextHTMLUnitTypes) {
   const [render, setRender] = useState(false);
-  const { getAllComponentsClassName } = CommonsHooksComponents();
   const { styles, className, isError, dangerouslySetInnerHTML } = props;
 
   useEffect(() => {

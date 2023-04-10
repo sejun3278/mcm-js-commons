@@ -2,12 +2,11 @@ import styled from "@emotion/styled";
 import _Button from "..";
 import _Error from "../../error";
 
-import CommonsHooksComponents from "../../../hooks";
+import { getAllComponentsClassName, getPXForm } from "../../../hooks";
 import { CloseButtonTypes } from "../../../types/units";
 
 // 닫기 형태로 사용하는 버튼 컴포넌트
 export default function _CloseButton(props: CloseButtonTypes) {
-  const { getAllComponentsClassName, getPXForm } = CommonsHooksComponents();
   const {
     className,
     buttonSize, // 버튼 사이즈

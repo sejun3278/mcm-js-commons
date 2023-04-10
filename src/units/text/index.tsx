@@ -25,7 +25,7 @@ export const PText = styled.p`
 
   ${(props: StyleTypes) =>
     props.isError && {
-      color: "#B46060",
+      color: "#d14d72",
       fontWeight: "700",
     }}
 `;
@@ -34,7 +34,7 @@ export const PText = styled.p`
 export const SpanText = styled.span`
   ${(props: StyleTypes) =>
     props.isError && {
-      color: "#B46060",
+      color: "#d14d72",
       fontWeight: "700",
     }}
 `;

@@ -35,6 +35,5 @@ SB_Anchor.defaultProps = {
   children: "링크(Anchor) 페이지 입니다.",
   className: "",
   styles: {},
-  href: "https://mcm-js.site/",
   notTarget: false,
 };

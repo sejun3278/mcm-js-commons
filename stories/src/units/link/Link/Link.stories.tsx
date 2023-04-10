@@ -15,9 +15,16 @@ export default {
 const Template = (args: LinkUnitTypes) => <SB_Link {...args} />;
 
 // 클래스 네임 적용
+export const Error = Template.bind({});
+Error.args = {
+  className: "sb-link",
+};
+
+// 클래스 네임 적용
 export const setClassname = Template.bind({});
 setClassname.args = {
-  className: "_sb_link_",
+  className: "sb-link",
+  href: "https://mcm-js.site/modules/modal",
 };
 
 // 스타일 적용
@@ -27,6 +34,7 @@ setStyles.args = {
     fontSize: "50px",
     letterSpacing: "5px",
   },
+  href: "https://mcm-js.site/modules/modal",
 };
 
 // 홈 페이지로 이동

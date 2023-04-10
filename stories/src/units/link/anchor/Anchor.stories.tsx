@@ -14,10 +14,17 @@ export default {
 
 const Template = (args: AnchorUnitTypes) => <SB_Anchor {...args} />;
 
+// 필수 props가 undefined일 경우
+export const Error = Template.bind({});
+Error.args = {
+  className: "sb-anchor",
+};
+
 // 클래스 네임 적용
 export const setClassname = Template.bind({});
 setClassname.args = {
-  className: "_sb_anchor_",
+  className: "sb-anchor",
+  href: "https://mcm-js.site/",
 };
 
 // 스타일 적용
@@ -27,6 +34,7 @@ setStyles.args = {
     fontSize: "50px",
     letterSpacing: "5px",
   },
+  href: "https://mcm-js.site/",
 };
 
 // 네이버 링크 연결
@@ -44,4 +52,5 @@ export const setNoneTarget = Template.bind({});
 setNoneTarget.args = {
   children: "새창을 띄우지 않습니다.",
   notTarget: true,
+  href: "https://mcm-js.site/",
 };

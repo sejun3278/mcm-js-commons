@@ -1,31 +1,32 @@
 import styled from "@emotion/styled";
 
 import _SpanText from "../text/span";
+import _Error from "../error";
+
 import CommonsHooksComponents from "../../hooks";
 import { ButtonUnitTypes } from "../../types/units";
 
 // button 태그로 렌더하는 컴포넌트
-export default function _Button({
-  children,
-  className,
-  onClickEvent,
-  styles,
-  isDisable,
-}: ButtonUnitTypes) {
+export default function _Button(props: ButtonUnitTypes) {
   const { getAllComponentsClassName } = CommonsHooksComponents();
+  const { children, className, onClickEvent, styles, isDisable } = props;
 
   return (
-    // (children && (
-    <Button
-      className={getAllComponentsClassName("cmm-button-unit", className)}
-      onClick={(!isDisable && onClickEvent) || undefined}
-      role="button_click_event"
-      style={styles}
-      isDisable={isDisable}
+    <_Error
+      propsList={{ ...props }}
+      requiredList={["onClickEvent"]}
+      mouduleName="_Button"
     >
-      {children}
-    </Button>
-    // )) || <_SpanText isError={true}>* children props가 필요합니다.</_SpanText>
+      <Button
+        className={getAllComponentsClassName("cmm-button-unit", className)}
+        onClick={(!isDisable && onClickEvent) || undefined}
+        role="button_click_event"
+        style={styles}
+        isDisable={isDisable}
+      >
+        {children}
+      </Button>
+    </_Error>
   );
 }
 

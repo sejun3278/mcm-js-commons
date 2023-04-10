@@ -37,7 +37,4 @@ SB_CloseButton.defaultProps = {
   buttonSize: "15px",
   buttonWeight: "1px",
   isDisable: false,
-  onClickEvent: () => {
-    alert("닫기가 작동됩니다.");
-  },
 };

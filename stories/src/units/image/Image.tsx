@@ -17,5 +17,4 @@ SB_Image.propTypes = {
 SB_Image.defaultProps = {
   className: "",
   styles: {},
-  src: "https://www.costco.co.kr/medias/sys_master/images/h9d/h20/121246995578910.jpg",
 };

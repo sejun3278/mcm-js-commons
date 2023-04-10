@@ -9,6 +9,7 @@ import _Title from "./units/title"; // title 정보 (h1 ~ h2)
 import _Anchor from "./units/link/anchor"; // a 태그
 import _Link from "./units/link/Link"; // Link 태그
 import _CloseButton from "./units/button/close"; // CloseButton 태그
+import _Error from "./units/error";
 
 export {
   _Button,
@@ -22,4 +23,5 @@ export {
   _Anchor,
   _Link,
   _CloseButton,
+  _Error,
 };

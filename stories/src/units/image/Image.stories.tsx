@@ -12,10 +12,18 @@ export default {
 
 const Template = (args) => <SB_Image {...args} />;
 
+// 필수 props가 undefined일 경우
+export const Error = Template.bind({});
+Error.args = {
+  className: "sb-image",
+  src: undefined,
+};
+
 // 클래스 네임 적용
 export const setClassname = Template.bind({});
 setClassname.args = {
-  className: "_sb_image_",
+  className: "sb-image",
+  src: "https://www.costco.co.kr/medias/sys_master/images/h9d/h20/121246995578910.jpg",
 };
 
 // 스타일 적용
@@ -25,6 +33,7 @@ setStyles.args = {
     width: "300px",
     height: "300px",
   },
+  src: "https://www.costco.co.kr/medias/sys_master/images/h9d/h20/121246995578910.jpg",
 };
 
 // 이미지 적용

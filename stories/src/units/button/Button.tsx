@@ -36,7 +36,4 @@ SB_Button.defaultProps = {
   styles: {},
   children: <span>Button StoryBook</span>,
   isDisable: false,
-  onClickEvent: () => {
-    alert("버튼을 클릭했습니다.");
-  },
 };

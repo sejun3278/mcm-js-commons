@@ -1,4 +1,3 @@
-import React, { MutableRefObject, useRef } from "react";
 import CommonsHooksComponents from "../../hooks";
 import { TitleUnitTypes } from "../../types/units";
 
@@ -10,7 +9,6 @@ export default function _Title({
   className,
   titleLevel,
 }: TitleUnitTypes) {
-  const renderRef = useRef() as MutableRefObject<HTMLDivElement>;
   const { getAllComponentsClassName, getOriginTemplate } =
     CommonsHooksComponents();
 

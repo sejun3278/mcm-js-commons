@@ -1,31 +1,42 @@
 import styled from "@emotion/styled";
 import _Button from "..";
+import _Error from "../../error";
 
 import CommonsHooksComponents from "../../../hooks";
 import { CloseButtonTypes } from "../../../types/units";
 
 // 닫기 형태로 사용하는 버튼 컴포넌트
-export default function _CloseButton({
-  className,
-  buttonSize, // 버튼 사이즈
-  buttonWeight, // 버튼 굵기 조절
-  buttonColor,
-  disable, // 닫기 비활성화
-  onClickEvent,
-  styles,
-}: CloseButtonTypes) {
+export default function _CloseButton(props: CloseButtonTypes) {
   const { getAllComponentsClassName, getPXForm } = CommonsHooksComponents();
+  const {
+    className,
+    buttonSize, // 버튼 사이즈
+    buttonWeight, // 버튼 굵기 조절
+    buttonColor,
+    disable, // 닫기 비활성화
+    onClickEvent,
+    styles,
+  } = props;
 
   return (
-    <ButtonWrapper
-      className={getAllComponentsClassName("mcm-close-button-unit", className)}
-      buttonSize={getPXForm(buttonSize || "15px", "15px")}
-      buttonWeight={getPXForm(buttonWeight || "1px", "1px")}
-      buttonColor={buttonColor || "black"}
-      onClick={(!disable && onClickEvent) || undefined}
-      disable={disable}
-      style={styles}
-    />
+    <_Error
+      propsList={{ ...props }}
+      requiredList={["onClickEvent"]}
+      mouduleName="_CloseButton"
+    >
+      <ButtonWrapper
+        className={getAllComponentsClassName(
+          "mcm-close-button-unit",
+          className
+        )}
+        buttonSize={getPXForm(buttonSize || "15px", "15px")}
+        buttonWeight={getPXForm(buttonWeight || "1px", "1px")}
+        buttonColor={buttonColor || "black"}
+        onClick={(!disable && onClickEvent) || undefined}
+        disable={disable}
+        style={styles}
+      />
+    </_Error>
   );
 }
 
@@ -50,12 +61,12 @@ export const ButtonWrapper = styled.button`
     props.buttonSize && {
       width: props.buttonSize,
       height: props.buttonSize,
-    }}
+    }};
 
   ${(props) =>
     props.disable && {
       cursor: "not-allowed",
-    }}
+    }};
 
   :after,
   :before {

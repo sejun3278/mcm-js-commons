@@ -12,11 +12,11 @@ import {
 } from "../../src";
 import _PtextHTML from "../../src/units/text/p/html";
 import _SpanTextWithHTML from "../../src/units/text/span/html";
-import _Error from "../../../mcm-js/src/components/commons/error";
 
 export default function Test() {
   return (
     <>
+      <_Title className="123123">asdas</_Title>
       {/* <_Button></_Button>
       <_Anchor>???</_Anchor>
       <_Link>???</_Link>

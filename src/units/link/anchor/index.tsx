@@ -1,12 +1,11 @@
 import styled from "@emotion/styled";
 
 import { AnchorUnitTypes } from "../../../types/units";
-import CommonsHooksComponents from "../../../hooks";
+import { getAllComponentsClassName } from "../../../hooks";
 import _Error from "../../error";
 
 // a태그를 사용해 타 웹 사이트 이동
 export default function _Anchor(props: AnchorUnitTypes) {
-  const { getAllComponentsClassName } = CommonsHooksComponents();
   const { children, href, className, notTarget, styles } = props;
 
   return (

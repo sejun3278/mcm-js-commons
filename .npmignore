@@ -10,3 +10,8 @@ tsconfig.tsbuildinfo
 yarn-error.log
 .storybook
 __spec__
+components
+jest.setup.ts
+jest.config.js
+.eslintrc.js
+tsconfig.json

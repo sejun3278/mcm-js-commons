@@ -1,14 +1,13 @@
 import { PText } from "../..";
 import DOMPurify from "dompurify";
 
-import CommonsHooksComponents from "../../../../hooks";
+import { getAllComponentsClassName } from "../../../../hooks";
 import { TextHTMLUnitTypes } from "../../../../types/units";
 import { useEffect, useState } from "react";
 
 // dangerouslySetInnerHTML 속성을 사용할 수 있는 P Text Component
 export default function _PTextWithHtml(props: TextHTMLUnitTypes) {
   const [render, setRender] = useState(false);
-  const { getAllComponentsClassName } = CommonsHooksComponents();
   const { styles, className, isError, dangerouslySetInnerHTML } = props;
 
   useEffect(() => {

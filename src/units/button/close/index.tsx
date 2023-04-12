@@ -12,9 +12,10 @@ export default function _CloseButton(props: CloseButtonTypes) {
     buttonSize, // 버튼 사이즈
     buttonWeight, // 버튼 굵기 조절
     buttonColor,
-    disable, // 닫기 비활성화
+    isDisable, // 닫기 비활성화
     onClickEvent,
     styles,
+    buttonType,
   } = props;
 
   return (
@@ -31,9 +32,10 @@ export default function _CloseButton(props: CloseButtonTypes) {
         buttonSize={getPXForm(buttonSize || "15px", "15px")}
         buttonWeight={getPXForm(buttonWeight || "1px", "1px")}
         buttonColor={buttonColor || "black"}
-        onClick={(!disable && onClickEvent) || undefined}
-        disable={disable}
+        onClick={(!isDisable && onClickEvent) || undefined}
+        disable={isDisable}
         style={styles}
+        type={buttonType || "submit"}
       />
     </_Error>
   );

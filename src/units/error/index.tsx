@@ -39,7 +39,7 @@ export default function _Error<T>({
 }
 
 export const ErrorWrapper = styled.article`
-  padding: 0rem 1.5rem;
+  padding: 1.5rem !important;
   border: double 2px black;
   border-radius: 10px;
   display: inline-block;
@@ -47,14 +47,18 @@ export const ErrorWrapper = styled.article`
 
   .mcm-title-unit {
     display: inline-block;
+    margin: 0 !important;
   }
 `;
 
 export const RequiredList = styled.ul`
-  margin-top: 0px;
+  margin-top: 20px !important;
+  margin-bottom: 0px !important;
+  display: flex;
+  flex-direction: column;
+  gap: 10px 0px;
 
   li {
     color: #d14d72;
-    margin: 10px 0px;
   }
 `;

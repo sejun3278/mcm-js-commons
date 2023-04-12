@@ -8,6 +8,7 @@ import {
   LinkUnitTypes,
   CloseButtonTypes,
   TextHTMLUnitTypes,
+  InputTypes,
 } from "./units.types";
 
 export type {
@@ -20,4 +21,5 @@ export type {
   AnchorUnitTypes,
   LinkUnitTypes,
   CloseButtonTypes,
+  InputTypes,
 };

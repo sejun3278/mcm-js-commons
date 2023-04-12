@@ -1,9 +1,11 @@
+import { ChangeEvent, MutableRefObject } from "react";
 import { CommonsTypes, ChildrenType } from "../commons.type";
 
 // 버튼 컴포넌트 타입
 export type ButtonUnitTypes = {
   onClickEvent: () => void; // 실행할 클릭 이벤트
   isDisable?: boolean; // 비활성화 여부, true일 경우 비활성화 (default : false)
+  buttonType?: "button" | "submit" | "reset"; // 버튼의 type 속성 지정 (default : submit)
 } & CommonsTypes &
   ChildrenType;
 
@@ -52,9 +54,18 @@ export type LinkUnitTypes = {
 
 // CloseButton 태그 컴포넌트 타입
 export type CloseButtonTypes = {
-  onClickEvent: () => void; // 클릭 이벤트
   buttonSize?: string; // 버튼 사이즈 (width, height에 적용) (default : 15px)
   buttonWeight?: string; // 버튼의 굵기 조절 (default : 1px)
   buttonColor?: string; // 버튼의 색상 조절 (default : black)
-  disable?: boolean; // 닫기 비활성화 (default : false)
+} & ButtonUnitTypes &
+  CommonsTypes;
+
+// Input 태그 컴포넌트 타입
+export type InputTypes = {
+  onChangeEvent: (text: string) => void; // onChange 이벤트
+  defaultValue?: string; // 초기값으로 사용할 검색어 (default : "")
+  placeHolder?: string; // placeHolder 속성 (default : "텍스트를 입력해주세요.")
+  maxLength?: number; // maxLength 속성 (default : 20)
+  isTextArea?: boolean; // textArea 태그로 대체 여부 (default : false)
+  delay?: number; // 디바운싱 시간을 조절, 단위는 ms로 전달 (default : 300 = 0.3초)
 } & CommonsTypes;

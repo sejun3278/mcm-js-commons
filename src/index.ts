@@ -10,6 +10,7 @@ import _Anchor from "./units/link/anchor"; // a 태그
 import _Link from "./units/link/Link"; // Link 태그
 import _CloseButton from "./units/button/close"; // CloseButton 태그
 import _Error from "./units/error";
+import _Input from "./units/input/input.container";
 
 export {
   _Button,
@@ -24,4 +25,5 @@ export {
   _Link,
   _CloseButton,
   _Error,
+  _Input,
 };

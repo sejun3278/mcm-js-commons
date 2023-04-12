@@ -2,6 +2,7 @@ import { CommonsTypes, ChildrenType } from "../commons.type";
 export type ButtonUnitTypes = {
     onClickEvent: () => void;
     isDisable?: boolean;
+    buttonType?: "button" | "submit" | "reset";
 } & CommonsTypes & ChildrenType;
 export type ImageUnitTypes = {
     src: string;
@@ -27,9 +28,7 @@ export type LinkUnitTypes = {
     href: string;
 } & CommonsTypes & ChildrenType;
 export type CloseButtonTypes = {
-    onClickEvent: () => void;
     buttonSize?: string;
     buttonWeight?: string;
     buttonColor?: string;
-    disable?: boolean;
-} & CommonsTypes;
+} & ButtonUnitTypes & CommonsTypes;

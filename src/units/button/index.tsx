@@ -8,7 +8,8 @@ import { ButtonUnitTypes } from "../../types/units";
 
 // button 태그로 렌더하는 컴포넌트
 export default function _Button(props: ButtonUnitTypes) {
-  const { children, className, onClickEvent, styles, isDisable } = props;
+  const { children, className, onClickEvent, styles, isDisable, buttonType } =
+    props;
 
   return (
     <_Error
@@ -22,6 +23,7 @@ export default function _Button(props: ButtonUnitTypes) {
         role="button_click_event"
         style={styles}
         isDisable={isDisable}
+        type={buttonType || "submit"}
       >
         {children}
       </Button>

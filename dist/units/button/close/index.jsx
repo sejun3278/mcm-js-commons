@@ -19,7 +19,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ButtonWrapper = void 0;
-var jsx_runtime_1 = require("react/jsx-runtime");
 var styled_1 = __importDefault(require("@emotion/styled"));
 var error_1 = __importDefault(require("../../error"));
 var hooks_1 = require("../../../hooks");
@@ -29,10 +28,12 @@ function _CloseButton(props) {
     buttonWeight = props.buttonWeight, // 버튼 굵기 조절
     buttonColor = props.buttonColor, isDisable = props.isDisable, // 닫기 비활성화
     onClickEvent = props.onClickEvent, styles = props.styles, buttonType = props.buttonType;
-    return ((0, jsx_runtime_1.jsx)(error_1.default, __assign({ propsList: __assign({}, props), requiredList: ["onClickEvent"], mouduleName: "_CloseButton" }, { children: (0, jsx_runtime_1.jsx)(exports.ButtonWrapper, { className: (0, hooks_1.getAllComponentsClassName)("mcm-close-button-unit", className), buttonSize: (0, hooks_1.getPXForm)(buttonSize || "15px", "15px"), buttonWeight: (0, hooks_1.getPXForm)(buttonWeight || "1px", "1px"), buttonColor: buttonColor || "black", onClick: (!isDisable && onClickEvent) || undefined, disable: isDisable, style: styles, type: buttonType || "submit" }) })));
+    return (<error_1.default propsList={__assign({}, props)} requiredList={["onClickEvent"]} mouduleName="_CloseButton">
+      <exports.ButtonWrapper className={(0, hooks_1.getAllComponentsClassName)("mcm-close-button-unit", className)} buttonSize={(0, hooks_1.getPXForm)(buttonSize || "15px", "15px")} buttonWeight={(0, hooks_1.getPXForm)(buttonWeight || "1px", "1px")} buttonColor={buttonColor || "black"} onClick={(!isDisable && onClickEvent) || undefined} disable={isDisable} style={styles} type={buttonType || "submit"}/>
+    </error_1.default>);
 }
 exports.default = _CloseButton;
-exports.ButtonWrapper = styled_1.default.button(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  border: unset;\n  background-color: unset;\n  cursor: pointer;\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 0;\n\n  ", ";\n\n  ", ";\n\n  :after,\n  :before {\n    content: \"\";\n    position: absolute;\n    width: 100%;\n    background-color: black;\n\n    ", "\n\n    ", "\n\n    ", "\n  }\n\n  :before {\n    transform: rotate(45deg);\n  }\n\n  :after {\n    transform: rotate(-45deg);\n  }\n"], ["\n  border: unset;\n  background-color: unset;\n  cursor: pointer;\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 0;\n\n  ", ";\n\n  ", ";\n\n  :after,\n  :before {\n    content: \"\";\n    position: absolute;\n    width: 100%;\n    background-color: black;\n\n    ", "\n\n    ", "\n\n    ", "\n  }\n\n  :before {\n    transform: rotate(45deg);\n  }\n\n  :after {\n    transform: rotate(-45deg);\n  }\n"])), function (props) {
+exports.ButtonWrapper = styled_1.default.button(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  border: unset;\n  background-color: unset;\n  cursor: pointer;\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 0;\n\n  ", ";\n\n  ", ";\n\n  ::after,\n  ::before {\n    content: \"\";\n    position: absolute;\n    width: 100%;\n    background-color: black;\n\n    ", "\n\n    ", "\n\n    ", "\n  }\n\n  ::before {\n    transform: rotate(45deg);\n  }\n\n  ::after {\n    transform: rotate(-45deg);\n  }\n"], ["\n  border: unset;\n  background-color: unset;\n  cursor: pointer;\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 0;\n\n  ", ";\n\n  ", ";\n\n  ::after,\n  ::before {\n    content: \"\";\n    position: absolute;\n    width: 100%;\n    background-color: black;\n\n    ", "\n\n    ", "\n\n    ", "\n  }\n\n  ::before {\n    transform: rotate(45deg);\n  }\n\n  ::after {\n    transform: rotate(-45deg);\n  }\n"])), function (props) {
     return props.buttonSize && {
         width: props.buttonSize,
         height: props.buttonSize,

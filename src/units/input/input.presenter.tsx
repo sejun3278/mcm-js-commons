@@ -6,6 +6,7 @@ import {
   Items,
   BtnWrapper,
   BtnItems,
+  SubmitBtn,
 } from "./input.styles";
 import _CloseButton from "../button/close";
 
@@ -18,6 +19,7 @@ export default function _InputUIPage(props: InputTypes & InputIProps) {
     className,
     styles,
     _onChangeEvent,
+    onSubmitEvent,
     resetEvent,
     _inputRef,
     defaultValue,
@@ -55,13 +57,25 @@ export default function _InputUIPage(props: InputTypes & InputIProps) {
             hasText={text}
           ></TextArea>
         )}
-        <BtnWrapper hasText={text}>
-          {/* <BtnItems> */}
-          <_CloseButton onClickEvent={resetEvent} />
-          {/* </BtnItems> */}
-          {/* <BtnItems> */}
-          <_CloseButton onClickEvent={resetEvent} />
-          {/* </BtnItems> */}
+        <BtnWrapper
+          hasText={text}
+          isTextArea={isTextArea}
+          hasSubmitEvent={onSubmitEvent !== undefined}
+        >
+          <BtnItems
+            hasText={text}
+            isTextArea={isTextArea}
+            hasSubmitEvent={onSubmitEvent !== undefined}
+          >
+            {onSubmitEvent && (
+              <SubmitBtn
+                className="mcm-input-submit-button"
+                onClick={onSubmitEvent}
+                type="button"
+              />
+            )}
+            <_CloseButton onClickEvent={resetEvent} buttonType="button" />
+          </BtnItems>
         </BtnWrapper>
       </Items>
     </Wrapper>

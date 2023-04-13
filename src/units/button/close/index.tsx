@@ -69,8 +69,8 @@ export const ButtonWrapper = styled.button`
       cursor: "not-allowed",
     }};
 
-  :after,
-  :before {
+  ::after,
+  ::before {
     content: "";
     position: absolute;
     width: 100%;
@@ -93,11 +93,11 @@ export const ButtonWrapper = styled.button`
       }}
   }
 
-  :before {
+  ::before {
     transform: rotate(45deg);
   }
 
-  :after {
+  ::after {
     transform: rotate(-45deg);
   }
 `;

@@ -1,4 +1,4 @@
-import { ChangeEvent, MutableRefObject } from "react";
+import { ChangeEvent, FormEvent, MutableRefObject } from "react";
 import { CommonsTypes, ChildrenType } from "../commons.type";
 
 // 버튼 컴포넌트 타입
@@ -63,6 +63,7 @@ export type CloseButtonTypes = {
 // Input 태그 컴포넌트 타입
 export type InputTypes = {
   onChangeEvent: (text: string) => void; // onChange 이벤트
+  onSubmitEvent?: (e?: FormEvent) => void; // submit 이벤트
   defaultValue?: string; // 초기값으로 사용할 검색어 (default : "")
   placeHolder?: string; // placeHolder 속성 (default : "텍스트를 입력해주세요.")
   maxLength?: number; // maxLength 속성 (default : 20)

@@ -14,3 +14,10 @@ a {
 * {
   box-sizing: border-box;
 }
+
+button {
+  border: unset;
+  background-color: unset;
+  padding: 0;
+  cursor: pointer;
+}

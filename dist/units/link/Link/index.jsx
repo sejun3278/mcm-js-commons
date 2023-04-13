@@ -18,15 +18,19 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var jsx_runtime_1 = require("react/jsx-runtime");
+var link_1 = __importDefault(require("next/link"));
 var styled_1 = __importDefault(require("@emotion/styled"));
 var hooks_1 = require("../../../hooks");
 var error_1 = __importDefault(require("../../error"));
-// a태그를 사용해 타 웹 사이트 이동
-function _Anchor(props) {
-    var children = props.children, href = props.href, className = props.className, notTarget = props.notTarget, styles = props.styles;
-    return ((0, jsx_runtime_1.jsx)(error_1.default, __assign({ propsList: __assign({}, props), requiredList: ["href"], mouduleName: "_Anchor" }, { children: (0, jsx_runtime_1.jsx)(Anchor, __assign({ style: styles, href: href, target: notTarget ? "_self" : "_blank", rel: "noreferrer", className: (0, hooks_1.getAllComponentsClassName)("mcm-anchor-unit", className) }, { children: children })) })));
+// router 이동 관련 컴포넌트
+function _Link(props) {
+    var href = props.href, children = props.children, className = props.className, styles = props.styles;
+    return (<error_1.default propsList={__assign({}, props)} requiredList={["href"]} mouduleName="_Link">
+      <LinkComponent passHref={true} href={href} className={(0, hooks_1.getAllComponentsClassName)("mcm-link-unit", className)} style={styles}>
+        {children}
+      </LinkComponent>
+    </error_1.default>);
 }
-exports.default = _Anchor;
-var Anchor = styled_1.default.a(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  color: blue;\n  text-decoration: underline;\n"], ["\n  color: blue;\n  text-decoration: underline;\n"])));
+exports.default = _Link;
+var LinkComponent = (0, styled_1.default)(link_1.default)(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  cursor: pointer;\n"], ["\n  cursor: pointer;\n"])));
 var templateObject_1;

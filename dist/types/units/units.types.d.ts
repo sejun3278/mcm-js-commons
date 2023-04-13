@@ -1,3 +1,4 @@
+import { FormEvent } from "react";
 import { CommonsTypes, ChildrenType } from "../commons.type";
 export type ButtonUnitTypes = {
     onClickEvent: () => void;
@@ -32,3 +33,12 @@ export type CloseButtonTypes = {
     buttonWeight?: string;
     buttonColor?: string;
 } & ButtonUnitTypes & CommonsTypes;
+export type InputTypes = {
+    onChangeEvent: (text: string) => void;
+    onSubmitEvent?: (e?: FormEvent) => void;
+    defaultValue?: string;
+    placeHolder?: string;
+    maxLength?: number;
+    isTextArea?: boolean;
+    delay?: number;
+} & CommonsTypes;

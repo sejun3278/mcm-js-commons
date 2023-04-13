@@ -16,6 +16,12 @@ import _SpanTextWithHTML from "../../src/units/text/span/html";
 
 export default function Test() {
   const [text, setText] = useState("");
+
+  const _submit = (e) => {
+    e.preventDefault();
+    alert(text);
+  };
+
   const changeEvent = (text: string) => {
     setText(text);
   };
@@ -24,10 +30,11 @@ export default function Test() {
     <>
       {/* <_Title className="123123">asdas</_Title> */}
       <div>
-        <form onSubmit={(e) => e.preventDefault()}>
+        <form onSubmit={_submit}>
           <_Input
             onChangeEvent={changeEvent}
             placeHolder="모듈 입력"
+            onSubmitEvent={_submit}
             isTextArea
           />
         </form>

@@ -19,14 +19,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Button = void 0;
-var jsx_runtime_1 = require("react/jsx-runtime");
 var styled_1 = __importDefault(require("@emotion/styled"));
 var error_1 = __importDefault(require("../error"));
 var hooks_1 = require("../../hooks");
 // button 태그로 렌더하는 컴포넌트
 function _Button(props) {
     var children = props.children, className = props.className, onClickEvent = props.onClickEvent, styles = props.styles, isDisable = props.isDisable, buttonType = props.buttonType;
-    return ((0, jsx_runtime_1.jsx)(error_1.default, __assign({ propsList: __assign({}, props), requiredList: ["onClickEvent"], mouduleName: "_Button" }, { children: (0, jsx_runtime_1.jsx)(exports.Button, __assign({ className: (0, hooks_1.getAllComponentsClassName)("cmm-button-unit", className), onClick: (!isDisable && onClickEvent) || undefined, role: "button_click_event", style: styles, isDisable: isDisable, type: buttonType || "submit" }, { children: children })) })));
+    return (<error_1.default propsList={__assign({}, props)} requiredList={["onClickEvent"]} mouduleName="_Button">
+      <exports.Button className={(0, hooks_1.getAllComponentsClassName)("cmm-button-unit", className)} onClick={(!isDisable && onClickEvent) || undefined} role="button_click_event" style={styles} isDisable={isDisable} type={buttonType || "submit"}>
+        {children}
+      </exports.Button>
+    </error_1.default>);
 }
 exports.default = _Button;
 exports.Button = styled_1.default.button(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  cursor: pointer;\n  ", "\n"], ["\n  cursor: pointer;\n  ", "\n"])), function (props) {

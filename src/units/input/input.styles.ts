@@ -1,6 +1,8 @@
 import styled from "@emotion/styled";
 import { CSSProperties } from "react";
 
+import { breakPoints } from "../../responsive";
+
 interface StyleTypes {
   hasText?: string;
   isTextArea?: boolean;
@@ -10,6 +12,13 @@ interface StyleTypes {
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+
+  .mcm-modal-contents-wrapper {
+    /* background-color: #aa5656; */
+    /* color: white; */
+    border: double 5px #aa5656;
+    border-radius: 10px;
+  }
 `;
 
 export const Fieldset = styled.fieldset`
@@ -46,20 +55,12 @@ export const Input = styled.input`
 
 export const TextArea = styled.textarea`
   width: 100%;
-  /* height: 100px; */
   min-height: 80px;
   max-height: 400px;
   border: unset;
   resize: vertical;
   padding: 8px;
   transition: border-right-width 0.3s ease;
-  /* border-right: dotted 1px gray;
-  border-right-width: 0px;
-
-  ${(props: StyleTypes) =>
-    props.hasText && {
-      borderRightWidth: "2px",
-    }} */
 `;
 
 export const BtnWrapper = styled.div`
@@ -113,7 +114,9 @@ export const BtnItems = styled.div`
       if (props.isTextArea) {
         styles.width = "25px";
       }
+      // 텍스트가 빈 문자열일 경우
     } else {
+      // textArea 태그를 사용한다면
       if (props.isTextArea) styles.width = "0px";
     }
 
@@ -127,6 +130,14 @@ export const BtnItems = styled.div`
   }
 
   .mcm-close-button-unit {
+    border-left: solid 1px black;
+
+    ${(props) =>
+      props.isTextArea && {
+        borderLeft: "unset",
+        borderTop: "solid 1px black",
+      }};
+
     ::before,
     ::after {
       width: 15px;
@@ -138,14 +149,44 @@ export const SubmitBtn = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+`;
 
-  ::after,
-  ::before {
-    content: "";
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    border: solid 1px black;
-    border-radius: 100%;
+export const ResetWrapper = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+
+  .mcm-title-unit {
+    margin: 20px 0px;
+    letter-spacing: -0.8px;
+  }
+
+  @media ${breakPoints.mobile} {
+    .mcm-title-unit {
+      font-size: 18px;
+      margin: 10px 0px;
+    }
+  }
+`;
+
+export const ResetButtonWrapper = styled.div`
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+
+  button {
+    font-size: 16px;
+    padding: 0.5rem;
+    border-radius: 10px;
+    color: #999999;
+    font-weight: 700;
+    transition: all 0.3s;
+
+    :hover {
+      color: #aa5656;
+    }
   }
 `;

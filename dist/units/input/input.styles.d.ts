@@ -23,7 +23,7 @@ export declare const Input: import("@emotion/styled").StyledComponent<{
 export declare const TextArea: import("@emotion/styled").StyledComponent<{
     theme?: import("@emotion/react").Theme | undefined;
     as?: import("react").ElementType<any> | undefined;
-} & StyleTypes, import("react").DetailedHTMLProps<import("react").TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement>, {}>;
+}, import("react").DetailedHTMLProps<import("react").TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement>, {}>;
 export declare const BtnWrapper: import("@emotion/styled").StyledComponent<{
     theme?: import("@emotion/react").Theme | undefined;
     as?: import("react").ElementType<any> | undefined;
@@ -36,4 +36,12 @@ export declare const SubmitBtn: import("@emotion/styled").StyledComponent<{
     theme?: import("@emotion/react").Theme | undefined;
     as?: import("react").ElementType<any> | undefined;
 }, import("react").DetailedHTMLProps<import("react").ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, {}>;
+export declare const ResetWrapper: import("@emotion/styled").StyledComponent<{
+    theme?: import("@emotion/react").Theme | undefined;
+    as?: import("react").ElementType<any> | undefined;
+}, import("react").DetailedHTMLProps<import("react").HTMLAttributes<HTMLElement>, HTMLElement>, {}>;
+export declare const ResetButtonWrapper: import("@emotion/styled").StyledComponent<{
+    theme?: import("@emotion/react").Theme | undefined;
+    as?: import("react").ElementType<any> | undefined;
+}, import("react").DetailedHTMLProps<import("react").HTMLAttributes<HTMLDivElement>, HTMLDivElement>, {}>;
 export {};

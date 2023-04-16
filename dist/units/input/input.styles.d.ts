@@ -36,12 +36,4 @@ export declare const SubmitBtn: import("@emotion/styled").StyledComponent<{
     theme?: import("@emotion/react").Theme | undefined;
     as?: import("react").ElementType<any> | undefined;
 }, import("react").DetailedHTMLProps<import("react").ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, {}>;
-export declare const ResetWrapper: import("@emotion/styled").StyledComponent<{
-    theme?: import("@emotion/react").Theme | undefined;
-    as?: import("react").ElementType<any> | undefined;
-}, import("react").DetailedHTMLProps<import("react").HTMLAttributes<HTMLElement>, HTMLElement>, {}>;
-export declare const ResetButtonWrapper: import("@emotion/styled").StyledComponent<{
-    theme?: import("@emotion/react").Theme | undefined;
-    as?: import("react").ElementType<any> | undefined;
-}, import("react").DetailedHTMLProps<import("react").HTMLAttributes<HTMLDivElement>, HTMLDivElement>, {}>;
 export {};

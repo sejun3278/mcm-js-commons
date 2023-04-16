@@ -7,9 +7,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ResetButtonWrapper = exports.ResetWrapper = exports.SubmitBtn = exports.BtnItems = exports.BtnWrapper = exports.TextArea = exports.Input = exports.Items = exports.Fieldset = exports.Wrapper = void 0;
+exports.SubmitBtn = exports.BtnItems = exports.BtnWrapper = exports.TextArea = exports.Input = exports.Items = exports.Fieldset = exports.Wrapper = void 0;
 var styled_1 = __importDefault(require("@emotion/styled"));
-var responsive_1 = require("../../responsive");
 exports.Wrapper = styled_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  min-height: 36px;\n\n  .mcm-modal-contents {\n    /* background-color: #aa5656; */\n    /* color: white; */\n    border: double 5px #aa5656;\n    border-radius: 10px;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  min-height: 36px;\n\n  .mcm-modal-contents {\n    /* background-color: #aa5656; */\n    /* color: white; */\n    border: double 5px #aa5656;\n    border-radius: 10px;\n  }\n"])));
 exports.Fieldset = styled_1.default.fieldset(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  display: none;\n  border: unset;\n  padding: 0px;\n  height: 100%;\n  margin: 0;\n\n  legend {\n    display: none;\n  }\n"], ["\n  display: none;\n  border: unset;\n  padding: 0px;\n  height: 100%;\n  margin: 0;\n\n  legend {\n    display: none;\n  }\n"])));
 exports.Items = styled_1.default.div(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  width: 100%;\n  height: 100%;\n  position: relative;\n  overflow: hidden;\n  border: solid 1px black;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  width: 100%;\n  height: 100%;\n  position: relative;\n  overflow: hidden;\n  border: solid 1px black;\n"])));
@@ -60,6 +59,39 @@ exports.BtnItems = styled_1.default.div(templateObject_7 || (templateObject_7 = 
     };
 });
 exports.SubmitBtn = styled_1.default.button(templateObject_8 || (templateObject_8 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n"])));
-exports.ResetWrapper = styled_1.default.section(templateObject_9 || (templateObject_9 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: space-around;\n  width: 100%;\n  height: 100%;\n\n  .mcm-title-unit {\n    margin: 0px;\n    letter-spacing: -0.8px;\n    font-size: 24px;\n  }\n\n  @media ", " {\n    .mcm-title-unit {\n      font-size: 18px;\n      margin: 10px 0px;\n    }\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: space-around;\n  width: 100%;\n  height: 100%;\n\n  .mcm-title-unit {\n    margin: 0px;\n    letter-spacing: -0.8px;\n    font-size: 24px;\n  }\n\n  @media ", " {\n    .mcm-title-unit {\n      font-size: 18px;\n      margin: 10px 0px;\n    }\n  }\n"])), responsive_1.breakPoints.mobile);
-exports.ResetButtonWrapper = styled_1.default.div(templateObject_10 || (templateObject_10 = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-around;\n  width: 100%;\n\n  button {\n    font-size: 16px;\n    padding: 0.5rem;\n    border-radius: 10px;\n    color: #999999;\n    font-weight: 700;\n    transition: all 0.3s;\n\n    :hover {\n      color: #aa5656;\n    }\n  }\n"], ["\n  display: flex;\n  justify-content: space-around;\n  width: 100%;\n\n  button {\n    font-size: 16px;\n    padding: 0.5rem;\n    border-radius: 10px;\n    color: #999999;\n    font-weight: 700;\n    transition: all 0.3s;\n\n    :hover {\n      color: #aa5656;\n    }\n  }\n"])));
-var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5, templateObject_6, templateObject_7, templateObject_8, templateObject_9, templateObject_10;
+var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5, templateObject_6, templateObject_7, templateObject_8;
+// export const ResetWrapper = styled.section`
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: space-around;
+//   width: 100%;
+//   height: 100%;
+//   .mcm-title-unit {
+//     margin: 0px;
+//     letter-spacing: -0.8px;
+//     font-size: 24px;
+//   }
+//   @media ${breakPoints.mobile} {
+//     .mcm-title-unit {
+//       font-size: 18px;
+//       margin: 10px 0px;
+//     }
+//   }
+// `;
+// export const ResetButtonWrapper = styled.div`
+//   display: flex;
+//   justify-content: space-around;
+//   width: 100%;
+//   button {
+//     font-size: 16px;
+//     padding: 0.5rem;
+//     border-radius: 10px;
+//     color: #999999;
+//     font-weight: 700;
+//     transition: all 0.3s;
+//     :hover {
+//       color: #aa5656;
+//     }
+//   }
+// `;

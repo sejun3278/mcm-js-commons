@@ -70,6 +70,7 @@ export const BtnWrapper = styled.div`
   width: 0px;
   transition: all 0.3s;
   opacity: 0;
+  cursor: default;
 
   ${(props: StyleTypes) => {
     const styles: { [key: string]: string | number } & CSSProperties = {};
@@ -129,6 +130,12 @@ export const BtnItems = styled.div`
     width: 100%;
     height: 100%;
     white-space: pre;
+    cursor: text;
+
+    ${(props) =>
+      props.hasText && {
+        cursor: "pointer",
+      }}
   }
 
   .mcm-close-button-unit {

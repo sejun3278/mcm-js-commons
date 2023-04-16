@@ -5,7 +5,5 @@ export interface InputIProps {
     _onChangeEvent: (e: ChangeEvent<HTMLInputElement & HTMLTextAreaElement>) => void;
     resetEvent: () => void;
     _inputRef: MutableRefObject<HTMLInputElement & HTMLTextAreaElement>;
-    isOpen: boolean;
-    toggleIsOpen: (bool: boolean) => () => void;
 }
 export default function _Input(props: InputTypes): JSX.Element;

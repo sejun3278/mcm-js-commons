@@ -71,13 +71,16 @@ export default function _InputUIPage(props: InputTypes & InputIProps) {
             {onSubmitEvent && (
               <SubmitBtn
                 className="mcm-input-submit-button"
-                onClick={onSubmitEvent}
+                onClick={(text && onSubmitEvent) || undefined}
                 type="button"
               >
                 ✔️
               </SubmitBtn>
             )}
-            <_CloseButton onClickEvent={resetEvent} buttonType="button" />
+            <_CloseButton
+              onClickEvent={text ? resetEvent : () => {}}
+              buttonType="button"
+            />
           </BtnItems>
         </BtnWrapper>
       </Items>

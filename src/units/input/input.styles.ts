@@ -12,8 +12,9 @@ interface StyleTypes {
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  min-height: 36px;
 
-  .mcm-modal-contents-wrapper {
+  .mcm-modal-contents {
     /* background-color: #aa5656; */
     /* color: white; */
     border: double 5px #aa5656;
@@ -22,6 +23,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Fieldset = styled.fieldset`
+  display: none;
   border: unset;
   padding: 0px;
   height: 100%;
@@ -130,7 +132,10 @@ export const BtnItems = styled.div`
   }
 
   .mcm-close-button-unit {
-    border-left: solid 1px black;
+    ${(props) =>
+      props.hasSubmitEvent && {
+        borderLeft: "solid 1px black",
+      }}
 
     ${(props) =>
       props.isTextArea && {
@@ -151,42 +156,43 @@ export const SubmitBtn = styled.button`
   justify-content: center;
 `;
 
-export const ResetWrapper = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  height: 100%;
+// export const ResetWrapper = styled.section`
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: space-around;
+//   width: 100%;
+//   height: 100%;
 
-  .mcm-title-unit {
-    margin: 20px 0px;
-    letter-spacing: -0.8px;
-  }
+//   .mcm-title-unit {
+//     margin: 0px;
+//     letter-spacing: -0.8px;
+//     font-size: 24px;
+//   }
 
-  @media ${breakPoints.mobile} {
-    .mcm-title-unit {
-      font-size: 18px;
-      margin: 10px 0px;
-    }
-  }
-`;
+//   @media ${breakPoints.mobile} {
+//     .mcm-title-unit {
+//       font-size: 18px;
+//       margin: 10px 0px;
+//     }
+//   }
+// `;
 
-export const ResetButtonWrapper = styled.div`
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
+// export const ResetButtonWrapper = styled.div`
+//   display: flex;
+//   justify-content: space-around;
+//   width: 100%;
 
-  button {
-    font-size: 16px;
-    padding: 0.5rem;
-    border-radius: 10px;
-    color: #999999;
-    font-weight: 700;
-    transition: all 0.3s;
+//   button {
+//     font-size: 16px;
+//     padding: 0.5rem;
+//     border-radius: 10px;
+//     color: #999999;
+//     font-weight: 700;
+//     transition: all 0.3s;
 
-    :hover {
-      color: #aa5656;
-    }
-  }
-`;
+//     :hover {
+//       color: #aa5656;
+//     }
+//   }
+// `;

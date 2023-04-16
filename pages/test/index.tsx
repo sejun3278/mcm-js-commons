@@ -35,7 +35,11 @@ export default function Test() {
             onChangeEvent={changeEvent}
             placeHolder="모듈 입력"
             onSubmitEvent={_submit}
-            isTextArea
+            onResetEvent={() => {
+              alert("초기화");
+              return true;
+            }}
+            // isTextArea
           />
         </form>
       </div>

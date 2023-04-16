@@ -12,8 +12,6 @@ export interface InputIProps {
   ) => void;
   resetEvent: () => void;
   _inputRef: MutableRefObject<HTMLInputElement & HTMLTextAreaElement>;
-  isOpen: boolean;
-  toggleIsOpen: (bool: boolean) => () => void;
 }
 
 // 디바운싱 저장 변수
@@ -24,13 +22,6 @@ export default function _Input(props: InputTypes) {
   >;
   const { defaultValue, onChangeEvent, delay } = props;
   const [text, setText] = useState<string>(defaultValue || "");
-  // 모달 오픈 여부
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-
-  // 모달 toggle
-  const toggleIsOpen = (bool: boolean) => () => {
-    setIsOpen(bool);
-  };
 
   // change 이벤트 실행시 디바운싱 적용하기
   const _onChangeEvent = (
@@ -49,16 +40,16 @@ export default function _Input(props: InputTypes) {
 
   // text 값 초기화
   const resetEvent = () => {
-    window.clearTimeout(_debounce);
+    if ((props.onResetEvent && props.onResetEvent()) || !props.onResetEvent) {
+      window.clearTimeout(_debounce);
 
-    setText("");
-    onChangeEvent("");
+      setText("");
+      onChangeEvent("");
 
-    if (_inputRef.current) {
-      _inputRef.current.value = "";
+      if (_inputRef.current) {
+        _inputRef.current.value = "";
+      }
     }
-
-    if (isOpen) setIsOpen(false);
   };
 
   const _props: InputTypes & InputIProps = {
@@ -67,8 +58,6 @@ export default function _Input(props: InputTypes) {
     text,
     resetEvent,
     _inputRef,
-    isOpen,
-    toggleIsOpen,
   };
 
   return (

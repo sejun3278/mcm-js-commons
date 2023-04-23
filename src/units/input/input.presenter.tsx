@@ -24,23 +24,27 @@ export default function _InputUIPage(props: InputTypes & InputIProps) {
     onSubmitEvent,
     resetEvent,
     _inputRef,
+    _itemsRef,
     defaultValue,
     placeHolder,
     maxLength,
-    text,
     isTextArea,
   } = props;
 
   return (
-    <Wrapper className="mcm-input-unit-wrapper">
+    <Wrapper
+      className="mcm-input-unit-wrapper"
+      hasSubmitEvent={onSubmitEvent !== undefined}
+      isTextArea={isTextArea}
+      style={styles}
+    >
       <Fieldset>
         <legend>Input & TextArea</legend>
       </Fieldset>
-      <Items>
+      <Items ref={_itemsRef} className="mcm-input-unit-items">
         {!isTextArea ? (
           <Input
             className={getAllComponentsClassName("mcm-input-unit", className)}
-            style={styles}
             type="text"
             placeholder={placeHolder || "텍스트를 입력해주세요."}
             maxLength={maxLength || 40}
@@ -51,36 +55,31 @@ export default function _InputUIPage(props: InputTypes & InputIProps) {
         ) : (
           <TextArea
             className={getAllComponentsClassName("mcm-input-unit", className)}
-            style={styles}
             placeholder={placeHolder || "텍스트를 입력해주세요."}
             maxLength={maxLength || 200}
             onChange={_onChangeEvent}
             ref={_inputRef}
-          ></TextArea>
+          >
+            {defaultValue}
+          </TextArea>
         )}
-        <BtnWrapper
-          hasText={text}
-          isTextArea={isTextArea}
-          hasSubmitEvent={onSubmitEvent !== undefined}
-        >
+        <BtnWrapper className="mcm-input-submit-button-wrapper">
           <BtnItems
-            hasText={text}
+            // hasText={text}
             isTextArea={isTextArea}
             hasSubmitEvent={onSubmitEvent !== undefined}
+            className="mcm-input-submit-button-items"
           >
             {onSubmitEvent && (
               <SubmitBtn
                 className="mcm-input-submit-button"
-                onClick={(text && onSubmitEvent) || undefined}
+                onClick={onSubmitEvent}
                 type="button"
               >
                 ✔️
               </SubmitBtn>
             )}
-            <_CloseButton
-              onClickEvent={text ? resetEvent : () => {}}
-              buttonType="button"
-            />
+            <_CloseButton onClickEvent={resetEvent} buttonType="button" />
           </BtnItems>
         </BtnWrapper>
       </Items>

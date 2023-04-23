@@ -7,6 +7,7 @@ interface StyleTypes {
   hasText?: string;
   isTextArea?: boolean;
   hasSubmitEvent?: boolean;
+  hasHeight?: boolean;
 }
 
 export const Wrapper = styled.div`
@@ -15,10 +16,36 @@ export const Wrapper = styled.div`
   min-height: 36px;
 
   .mcm-modal-contents {
-    /* background-color: #aa5656; */
-    /* color: white; */
     border: double 5px #aa5656;
     border-radius: 10px;
+  }
+
+  .show-submit-buttons {
+    .mcm-input-submit-button-wrapper,
+    .mcm-input-submit-button-items {
+      ${(props) => {
+        const styles: { [key: string]: string | number } & CSSProperties = {
+          width: "25px",
+          visibility: "visible",
+          opacity: 1,
+        };
+
+        if (props.hasSubmitEvent) styles.width = "50px";
+        if (props.isTextArea) styles.width = "25px";
+
+        return styles;
+      }}
+    }
+  }
+
+  .mcm-input-submit-button-items {
+    ${(props: StyleTypes) => {
+      const styles: { [key: string]: string | number } & CSSProperties = {};
+
+      if (props.isTextArea) styles.flexDirection = "column";
+
+      return styles;
+    }}
   }
 `;
 
@@ -57,8 +84,8 @@ export const Input = styled.input`
 
 export const TextArea = styled.textarea`
   width: 100%;
+  height: 100%;
   min-height: 80px;
-  max-height: 400px;
   border: unset;
   resize: vertical;
   padding: 8px;
@@ -69,24 +96,9 @@ export const BtnWrapper = styled.div`
   height: 100%;
   width: 0px;
   transition: all 0.3s;
+  visibility: hidden;
   opacity: 0;
   cursor: default;
-
-  ${(props: StyleTypes) => {
-    const styles: { [key: string]: string | number } & CSSProperties = {};
-
-    if (props.isTextArea) styles.position = "unset";
-
-    // 텍스트가 있을 경우 기본 오픈
-    if (props.hasText) {
-      styles.opacity = 1;
-      styles.width = "25px";
-
-      if (props.hasSubmitEvent && !props.isTextArea) styles.width = "50px";
-    }
-
-    return styles;
-  }};
 `;
 
 export const BtnItems = styled.div`
@@ -100,46 +112,21 @@ export const BtnItems = styled.div`
   justify-content: space-around;
   transition: all 0.3s;
   opacity: 0;
+  visibility: hidden;
   border-left: dotted 2px gray;
-
-  ${(props: StyleTypes) => {
-    const styles: { [key: string]: string | number } & CSSProperties = {};
-
-    if (props.isTextArea) styles.flexDirection = "column";
-
-    // 텍스트가 있을 경우 기본 오픈
-    if (props.hasText) {
-      styles.opacity = 1;
-      styles.width = "25px";
-
-      if (props.hasSubmitEvent) styles.width = "50px";
-
-      if (props.isTextArea) {
-        styles.width = "25px";
-      }
-      // 텍스트가 빈 문자열일 경우
-    } else {
-      // textArea 태그를 사용한다면
-      if (props.isTextArea) styles.width = "0px";
-    }
-
-    return styles;
-  }}
 
   button {
     width: 100%;
     height: 100%;
     white-space: pre;
-    cursor: text;
-
-    ${(props) =>
-      props.hasText && {
-        cursor: "pointer",
-      }}
+    background-color: unset;
+    border: unset;
+    cursor: pointer;
+    padding: 0;
   }
 
   .mcm-close-button-unit {
-    ${(props) =>
+    ${(props: StyleTypes) =>
       props.hasSubmitEvent && {
         borderLeft: "solid 1px black",
       }}
@@ -162,44 +149,3 @@ export const SubmitBtn = styled.button`
   align-items: center;
   justify-content: center;
 `;
-
-// export const ResetWrapper = styled.section`
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: space-around;
-//   width: 100%;
-//   height: 100%;
-
-//   .mcm-title-unit {
-//     margin: 0px;
-//     letter-spacing: -0.8px;
-//     font-size: 24px;
-//   }
-
-//   @media ${breakPoints.mobile} {
-//     .mcm-title-unit {
-//       font-size: 18px;
-//       margin: 10px 0px;
-//     }
-//   }
-// `;
-
-// export const ResetButtonWrapper = styled.div`
-//   display: flex;
-//   justify-content: space-around;
-//   width: 100%;
-
-//   button {
-//     font-size: 16px;
-//     padding: 0.5rem;
-//     border-radius: 10px;
-//     color: #999999;
-//     font-weight: 700;
-//     transition: all 0.3s;
-
-//     :hover {
-//       color: #aa5656;
-//     }
-//   }
-// `;

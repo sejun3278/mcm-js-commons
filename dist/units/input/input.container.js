@@ -22,31 +22,54 @@ var error_1 = __importDefault(require("../error"));
 var _debounce;
 function _Input(props) {
     var _inputRef = (0, react_1.useRef)();
-    var defaultValue = props.defaultValue, onChangeEvent = props.onChangeEvent, delay = props.delay;
-    var _a = (0, react_1.useState)(defaultValue || ""), text = _a[0], setText = _a[1];
+    var _itemsRef = (0, react_1.useRef)();
+    var defaultValue = props.defaultValue, onChangeEvent = props.onChangeEvent, delay = props.delay, onResetEvent = props.onResetEvent;
+    (0, react_1.useEffect)(function () {
+        if (defaultValue) {
+            toggleShowEvent(defaultValue || "");
+            onChangeEvent(defaultValue);
+        }
+    }, [defaultValue]);
     // change 이벤트 실행시 디바운싱 적용하기
     var _onChangeEvent = function (e) {
         var text = e.target.value.trim();
         window.clearTimeout(_debounce);
         if (onChangeEvent) {
             _debounce = window.setTimeout(function () {
-                setText(text);
+                toggleShowEvent(text);
                 onChangeEvent(text);
-            }, delay || 300);
+            }, delay || -1);
+        }
+    };
+    // submit 태그 on/off toggle
+    var toggleShowEvent = function (text) {
+        if (_itemsRef === null || _itemsRef === void 0 ? void 0 : _itemsRef.current) {
+            if (text) {
+                if (!_itemsRef.current.classList.contains("show-submit-buttons"))
+                    _itemsRef.current.classList.add("show-submit-buttons");
+            }
+            else {
+                if (_itemsRef.current.classList.contains("show-submit-buttons"))
+                    _itemsRef.current.classList.remove("show-submit-buttons");
+            }
         }
     };
     // text 값 초기화
     var resetEvent = function () {
-        if ((props.onResetEvent && props.onResetEvent()) || !props.onResetEvent) {
-            window.clearTimeout(_debounce);
-            setText("");
-            onChangeEvent("");
-            if (_inputRef.current) {
-                _inputRef.current.value = "";
-            }
+        // if ((props.onResetEvent && props.onResetEvent()) || !props.onResetEvent) {
+        window.clearTimeout(_debounce);
+        if (onResetEvent)
+            onResetEvent();
+        onChangeEvent("");
+        if (_inputRef.current) {
+            _inputRef.current.value = "";
+            toggleShowEvent("");
         }
+        // }
     };
-    var _props = __assign(__assign({}, props), { _onChangeEvent: _onChangeEvent, text: text, resetEvent: resetEvent, _inputRef: _inputRef });
+    var _props = __assign(__assign({}, props), { _onChangeEvent: _onChangeEvent, 
+        // text,
+        resetEvent: resetEvent, _inputRef: _inputRef, _itemsRef: _itemsRef });
     return ((0, jsx_runtime_1.jsx)(error_1.default, { propsList: __assign({}, props), requiredList: ["onChangeEvent"], mouduleName: "Input", children: (0, jsx_runtime_1.jsx)(input_presenter_1.default, __assign({}, _props)) }));
 }
 exports.default = _Input;

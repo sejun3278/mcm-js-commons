@@ -3,11 +3,12 @@ interface StyleTypes {
     hasText?: string;
     isTextArea?: boolean;
     hasSubmitEvent?: boolean;
+    hasHeight?: boolean;
 }
 export declare const Wrapper: import("@emotion/styled").StyledComponent<{
     theme?: import("@emotion/react").Theme | undefined;
     as?: import("react").ElementType<any> | undefined;
-}, import("react").DetailedHTMLProps<import("react").HTMLAttributes<HTMLDivElement>, HTMLDivElement>, {}>;
+} & StyleTypes, import("react").DetailedHTMLProps<import("react").HTMLAttributes<HTMLDivElement>, HTMLDivElement>, {}>;
 export declare const Fieldset: import("@emotion/styled").StyledComponent<{
     theme?: import("@emotion/react").Theme | undefined;
     as?: import("react").ElementType<any> | undefined;
@@ -27,7 +28,7 @@ export declare const TextArea: import("@emotion/styled").StyledComponent<{
 export declare const BtnWrapper: import("@emotion/styled").StyledComponent<{
     theme?: import("@emotion/react").Theme | undefined;
     as?: import("react").ElementType<any> | undefined;
-} & StyleTypes, import("react").DetailedHTMLProps<import("react").HTMLAttributes<HTMLDivElement>, HTMLDivElement>, {}>;
+}, import("react").DetailedHTMLProps<import("react").HTMLAttributes<HTMLDivElement>, HTMLDivElement>, {}>;
 export declare const BtnItems: import("@emotion/styled").StyledComponent<{
     theme?: import("@emotion/react").Theme | undefined;
     as?: import("react").ElementType<any> | undefined;

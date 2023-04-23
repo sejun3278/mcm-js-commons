@@ -13,6 +13,7 @@ export default function SB_Input({
   onChangeEvent,
   onResetEvent,
   onSubmitEvent,
+  value,
   defaultValue,
   placeHolder,
   maxLength,
@@ -40,6 +41,7 @@ export default function SB_Input({
       onChangeEvent={onChangeEvent === undefined ? undefined : changeText}
       onSubmitEvent={submitText}
       onResetEvent={onResetEvent}
+      value={value || ""}
       defaultValue={defaultValue || ""}
       placeHolder={placeHolder}
       maxLength={maxLength}
@@ -55,6 +57,7 @@ SB_Input.propTypes = {
   onChangeEvent: PropTypes.func.isRequired,
   onSubmitEvent: PropTypes.func,
   onResetEvent: PropTypes.func,
+  value: PropTypes.string,
   defaultValue: PropTypes.string,
   placeHolder: PropTypes.string,
   maxLength: PropTypes.number,
@@ -68,6 +71,7 @@ SB_Input.defaultProps = {
   // onChangeEvent: () => {},
   onResetEvent: () => {},
   onSubmitEvent: () => {},
+  value: "",
   defaultValue: "",
   placeHolder: "",
   maxLength: 10,

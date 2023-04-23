@@ -25,6 +25,7 @@ export default function _InputUIPage(props: InputTypes & InputIProps) {
     resetEvent,
     _inputRef,
     _itemsRef,
+    value,
     defaultValue,
     placeHolder,
     maxLength,
@@ -50,7 +51,7 @@ export default function _InputUIPage(props: InputTypes & InputIProps) {
             maxLength={maxLength || 40}
             onChange={_onChangeEvent}
             ref={_inputRef}
-            defaultValue={defaultValue}
+            defaultValue={value || defaultValue}
           />
         ) : (
           <TextArea

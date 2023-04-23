@@ -28,15 +28,19 @@ export default function _Input(props: InputTypes) {
     HTMLInputElement & HTMLTextAreaElement
   >;
   const _itemsRef = useRef() as MutableRefObject<HTMLDivElement>;
+  const { defaultValue, onChangeEvent, delay, onResetEvent, value } = props;
 
-  const { defaultValue, onChangeEvent, delay, onResetEvent } = props;
-
+  // value와 defaultValue가 있다면, value가 우선적용
   useEffect(() => {
-    if (defaultValue) {
-      toggleShowEvent(defaultValue || "");
-      onChangeEvent(defaultValue);
+    if (value || defaultValue) {
+      toggleShowEvent(value || defaultValue || "");
+      onChangeEvent(value || defaultValue || "");
     }
-  }, [defaultValue]);
+
+    if (_inputRef?.current) {
+      if (value) _inputRef.current.setAttribute("value", value);
+    }
+  }, [value, defaultValue]);
 
   // change 이벤트 실행시 디바운싱 적용하기
   const _onChangeEvent = (
@@ -45,10 +49,10 @@ export default function _Input(props: InputTypes) {
     const text = e.target.value.trim();
 
     window.clearTimeout(_debounce);
+    // 디바운싱 적용하기
     if (onChangeEvent) {
       _debounce = window.setTimeout(() => {
         toggleShowEvent(text);
-
         onChangeEvent(text);
       }, delay || -1);
     }

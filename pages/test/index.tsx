@@ -15,7 +15,7 @@ import _PtextHTML from "../../src/units/text/p/html";
 import _SpanTextWithHTML from "../../src/units/text/span/html";
 
 export default function Test() {
-  const [text, setText] = useState("");
+  const [text, setText] = useState("bbb");
 
   const _submit = (e) => {
     e.preventDefault();
@@ -23,6 +23,7 @@ export default function Test() {
   };
 
   const changeEvent = (text: string) => {
+    // console.log(text);
     setText(text);
   };
 
@@ -35,15 +36,13 @@ export default function Test() {
             onChangeEvent={changeEvent}
             placeHolder="모듈 입력"
             onSubmitEvent={_submit}
-            // delay={500}
+            delay={2000}
             onResetEvent={() => {
               alert("초기화 완료");
             }}
-            styles={{
-              height: "300px",
-            }}
-            defaultValue="aaa"
-            isTextArea
+            // defaultValue="aaa"
+            value={text}
+            // isTextArea
           />
         </form>
       </div>

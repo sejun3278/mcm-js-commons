@@ -64,6 +64,7 @@ export type CloseButtonTypes = {
 export type InputTypes = {
   onChangeEvent: (text: string) => void; // onChange 이벤트
   onSubmitEvent?: (e?: FormEvent) => void; // submit 이벤트
+  onResetEvent?: () => void; // 입력된 값을 초기화할 때 실행되는 이벤트
   defaultValue?: string; // 초기값으로 사용할 검색어 (default : "")
   placeHolder?: string; // placeHolder 속성 (default : "텍스트를 입력해주세요.")
   maxLength?: number; // maxLength 속성 (default : 20)

@@ -35,6 +35,14 @@ export default function Test() {
             onChangeEvent={changeEvent}
             placeHolder="모듈 입력"
             onSubmitEvent={_submit}
+            // delay={500}
+            onResetEvent={() => {
+              alert("초기화 완료");
+            }}
+            styles={{
+              height: "300px",
+            }}
+            defaultValue="aaa"
             isTextArea
           />
         </form>

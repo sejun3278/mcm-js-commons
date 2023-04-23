@@ -36,6 +36,7 @@ export type CloseButtonTypes = {
 export type InputTypes = {
     onChangeEvent: (text: string) => void;
     onSubmitEvent?: (e?: FormEvent) => void;
+    onResetEvent?: () => void;
     defaultValue?: string;
     placeHolder?: string;
     maxLength?: number;

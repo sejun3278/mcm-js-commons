@@ -15,6 +15,7 @@ import _Button from "../button";
 import { getAllComponentsClassName } from "../../hooks";
 import { InputTypes } from "../../types/units";
 import { InputIProps } from "./input.container";
+import { MutableRefObject } from "react";
 
 export default function _InputUIPage(props: InputTypes & InputIProps) {
   const {
@@ -30,6 +31,7 @@ export default function _InputUIPage(props: InputTypes & InputIProps) {
     placeHolder,
     maxLength,
     isTextArea,
+    inputType,
   } = props;
 
   return (
@@ -46,11 +48,16 @@ export default function _InputUIPage(props: InputTypes & InputIProps) {
         {!isTextArea ? (
           <Input
             className={getAllComponentsClassName("mcm-input-unit", className)}
-            type="text"
-            placeholder={placeHolder || "텍스트를 입력해주세요."}
+            type={inputType || "text"}
+            placeholder={
+              placeHolder ||
+              (inputType === "password"
+                ? "비밀번호를 입력해주세요."
+                : "텍스트를 입력해주세요.")
+            }
             maxLength={maxLength || 40}
             onChange={_onChangeEvent}
-            ref={_inputRef}
+            ref={_inputRef as MutableRefObject<HTMLInputElement>}
             defaultValue={value || defaultValue}
           />
         ) : (
@@ -59,10 +66,9 @@ export default function _InputUIPage(props: InputTypes & InputIProps) {
             placeholder={placeHolder || "텍스트를 입력해주세요."}
             maxLength={maxLength || 200}
             onChange={_onChangeEvent}
-            ref={_inputRef}
-          >
-            {defaultValue}
-          </TextArea>
+            ref={_inputRef as MutableRefObject<HTMLTextAreaElement>}
+            defaultValue={value || defaultValue}
+          ></TextArea>
         )}
         <BtnWrapper className="mcm-input-submit-button-wrapper">
           <BtnItems

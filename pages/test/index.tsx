@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, MutableRefObject, useRef, useState } from "react";
 
 import {
   _SpanText,
@@ -16,6 +16,7 @@ import _SpanTextWithHTML from "../../src/units/text/span/html";
 
 export default function Test() {
   const [text, setText] = useState("bbb");
+  const _ref = useRef() as MutableRefObject<HTMLInputElement>;
 
   const _submit = (e) => {
     e.preventDefault();
@@ -29,20 +30,19 @@ export default function Test() {
 
   return (
     <>
-      {/* <_Title className="123123">asdas</_Title> */}
+      <button onClick={() => changeEvent("")}>초기화</button>
       <div>
         <form onSubmit={_submit}>
           <_Input
             onChangeEvent={changeEvent}
             placeHolder="모듈 입력"
             onSubmitEvent={_submit}
-            delay={2000}
-            onResetEvent={() => {
-              alert("초기화 완료");
-            }}
-            // defaultValue="aaa"
-            value={text}
+            delay={200}
+            defaultValue="aaa"
+            inputRef={_ref}
+            // value={text}
             // isTextArea
+            inputType="password"
           />
         </form>
       </div>

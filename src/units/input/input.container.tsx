@@ -1,12 +1,6 @@
 import _InputUIPage from "./input.presenter";
 
-import {
-  ChangeEvent,
-  MutableRefObject,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import { ChangeEvent, MutableRefObject, useEffect, useRef } from "react";
 import { InputTypes } from "../../types/units";
 
 import _Error from "../error";
@@ -14,21 +8,29 @@ import _Error from "../error";
 export interface InputIProps {
   // text: string;
   _onChangeEvent: (
-    e: ChangeEvent<HTMLInputElement & HTMLTextAreaElement>
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => void;
   resetEvent: () => void;
-  _inputRef: MutableRefObject<HTMLInputElement & HTMLTextAreaElement>;
+  _inputRef: MutableRefObject<HTMLInputElement | HTMLTextAreaElement>;
   _itemsRef: MutableRefObject<HTMLDivElement>;
 }
 
 // 디바운싱 저장 변수
 let _debounce: ReturnType<typeof setTimeout> | number;
 export default function _Input(props: InputTypes) {
-  const _inputRef = useRef() as MutableRefObject<
-    HTMLInputElement & HTMLTextAreaElement
-  >;
+  const {
+    defaultValue,
+    onChangeEvent,
+    delay,
+    onResetConfirm,
+    value,
+    inputRef,
+  } = props as InputTypes;
+
+  const _inputRef =
+    inputRef ||
+    (useRef() as MutableRefObject<HTMLInputElement | HTMLTextAreaElement>);
   const _itemsRef = useRef() as MutableRefObject<HTMLDivElement>;
-  const { defaultValue, onChangeEvent, delay, onResetEvent, value } = props;
 
   // value와 defaultValue가 있다면, value가 우선적용
   useEffect(() => {
@@ -38,13 +40,17 @@ export default function _Input(props: InputTypes) {
     }
 
     if (_inputRef?.current) {
-      if (value) _inputRef.current.setAttribute("value", value);
+      // 초기 value 값 설정 - 디바운싱 적용에 사용
+      _inputRef.current.value = value || defaultValue || "";
+
+      toggleShowEvent(value || defaultValue || "");
+      onChangeEvent(value || defaultValue || "");
     }
   }, [value, defaultValue]);
 
   // change 이벤트 실행시 디바운싱 적용하기
   const _onChangeEvent = (
-    e: ChangeEvent<HTMLInputElement & HTMLTextAreaElement>
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const text = e.target.value.trim();
 
@@ -73,16 +79,20 @@ export default function _Input(props: InputTypes) {
 
   // text 값 초기화
   const resetEvent = () => {
-    // if ((props.onResetEvent && props.onResetEvent()) || !props.onResetEvent) {
-    window.clearTimeout(_debounce);
-    if (onResetEvent) onResetEvent();
+    const _reset = () => {
+      onChangeEvent("");
+      if (_inputRef.current) {
+        _inputRef.current.value = "";
+        toggleShowEvent("");
+      }
+    };
 
-    onChangeEvent("");
-    if (_inputRef.current) {
-      _inputRef.current.value = "";
-      toggleShowEvent("");
+    window.clearTimeout(_debounce);
+    if (onResetConfirm) {
+      if (onResetConfirm()) _reset();
+    } else {
+      _reset();
     }
-    // }
   };
 
   const _props: InputTypes & InputIProps = {

@@ -64,11 +64,13 @@ export type CloseButtonTypes = {
 export type InputTypes = {
   onChangeEvent: (text: string) => void; // onChange 이벤트
   onSubmitEvent?: (e?: FormEvent) => void; // submit 이벤트
-  onResetEvent?: () => void; // 입력된 값을 초기화할 때 실행되는 이벤트
+  onResetConfirm?: () => boolean; // 입력된 값을 초기화할 때 실행되는 선택문, boolean 타입 리턴
   value?: string; // value 속성에 사용될 문자열
   defaultValue?: string; // 초기값으로 사용할 문자열 (default : "")
   placeHolder?: string; // placeHolder 속성 (default : "텍스트를 입력해주세요.")
   maxLength?: number; // maxLength 속성 (default : 20)
   isTextArea?: boolean; // textArea 태그로 대체 여부 (default : false)
   delay?: number; // 디바운싱 시간을 조절, 단위는 ms로 전달 (default : 300 = 0.3초)
+  inputRef?: MutableRefObject<HTMLInputElement | HTMLTextAreaElement>; // ref 설정
+  inputType?: "text" | "password"; // input(TextArea 사용 불가)에서의 타입 속성 지정
 } & CommonsTypes;

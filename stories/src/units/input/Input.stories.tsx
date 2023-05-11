@@ -77,6 +77,14 @@ useValue.args = {
   value: "텍스트입니다.",
 } as InputTypes;
 
+// password 속성 설정
+export const passwordType = Template.bind({});
+passwordType.args = {
+  onChangeEvent: () => {},
+  value: "111",
+  inputType: "password",
+} as InputTypes;
+
 // debouncing 적용
 export const debouncing = Template.bind({});
 debouncing.args = {

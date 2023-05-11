@@ -11,7 +11,7 @@ export default function SB_Input({
   className,
   styles,
   onChangeEvent,
-  onResetEvent,
+  onResetConfirm,
   onSubmitEvent,
   value,
   defaultValue,
@@ -19,6 +19,7 @@ export default function SB_Input({
   maxLength,
   isTextArea,
   delay,
+  inputType,
 }: InputTypes) {
   const [text, setText] = useState("");
 
@@ -32,7 +33,6 @@ export default function SB_Input({
     if (onSubmitEvent) onSubmitEvent();
   };
 
-  console.log(onChangeEvent);
   return (
     <_Input
       className={className}
@@ -40,13 +40,14 @@ export default function SB_Input({
       // @ts-ignore
       onChangeEvent={onChangeEvent === undefined ? undefined : changeText}
       onSubmitEvent={submitText}
-      onResetEvent={onResetEvent}
+      onResetConfirm={onResetConfirm}
       value={value || ""}
       defaultValue={defaultValue || ""}
       placeHolder={placeHolder}
       maxLength={maxLength}
       isTextArea={isTextArea}
       delay={delay}
+      inputType={inputType || "text"}
     />
   );
 }
@@ -63,8 +64,10 @@ SB_Input.propTypes = {
   maxLength: PropTypes.number,
   isTextArea: PropTypes.bool,
   delay: PropTypes.number,
+  inputType: PropTypes.string,
 };
 
+// @ts-ignore
 SB_Input.defaultProps = {
   className: "",
   styles: {},
@@ -77,4 +80,5 @@ SB_Input.defaultProps = {
   maxLength: 10,
   isTextArea: false,
   delay: -1,
+  inputType: "text",
 } as InputTypes;

@@ -25,6 +25,7 @@ export default function _Input(props: InputTypes) {
     onResetConfirm,
     value,
     inputRef,
+    name,
   } = props as InputTypes;
 
   const _inputRef =

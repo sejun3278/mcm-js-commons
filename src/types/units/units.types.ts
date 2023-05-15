@@ -73,4 +73,5 @@ export type InputTypes = {
   delay?: number; // 디바운싱 시간을 조절, 단위는 ms로 전달 (default : 300 = 0.3초)
   inputRef?: MutableRefObject<HTMLInputElement | HTMLTextAreaElement>; // ref 설정
   inputType?: "text" | "password"; // input(TextArea 사용 불가)에서의 타입 속성 지정
+  name?: string; // name 속성 지정
 } & CommonsTypes;

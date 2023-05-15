@@ -32,6 +32,7 @@ export default function _InputUIPage(props: InputTypes & InputIProps) {
     maxLength,
     isTextArea,
     inputType,
+    name,
   } = props;
 
   return (
@@ -59,6 +60,8 @@ export default function _InputUIPage(props: InputTypes & InputIProps) {
             onChange={_onChangeEvent}
             ref={_inputRef as MutableRefObject<HTMLInputElement>}
             defaultValue={value || defaultValue}
+            autoComplete="off"
+            name={name}
           />
         ) : (
           <TextArea
@@ -68,6 +71,7 @@ export default function _InputUIPage(props: InputTypes & InputIProps) {
             onChange={_onChangeEvent}
             ref={_inputRef as MutableRefObject<HTMLTextAreaElement>}
             defaultValue={value || defaultValue}
+            name={name}
           ></TextArea>
         )}
         <BtnWrapper className="mcm-input-submit-button-wrapper">

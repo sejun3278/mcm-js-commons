@@ -60,7 +60,7 @@ export default function _InputUIPage(props: InputTypes & InputIProps) {
             onChange={_onChangeEvent}
             ref={_inputRef as MutableRefObject<HTMLInputElement>}
             defaultValue={value || defaultValue}
-            autoComplete="true"
+            autoComplete="off"
             name={name}
           />
         ) : (

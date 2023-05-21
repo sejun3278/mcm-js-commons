@@ -1,5 +1,5 @@
 import { ChangeEvent, FormEvent, MutableRefObject } from "react";
-import { CommonsTypes, ChildrenType } from "../commons.type";
+import { CommonsTypes, ChildrenType, RefType } from "../commons.type";
 
 // 버튼 컴포넌트 타입
 export type ButtonUnitTypes = {
@@ -25,13 +25,17 @@ export interface TextErrorType {
 }
 
 // p, span 텍스트 태그 컴포넌트 타입
-export type TextUnitTypes = TextErrorType & CommonsTypes & ChildrenType;
+export type TextUnitTypes = TextErrorType &
+  CommonsTypes &
+  ChildrenType &
+  RefType;
 
 // p, span + html 컴포넌트 타입
 export type TextHTMLUnitTypes = {
   dangerouslySetInnerHTML: string; // dangerouslySetInnerHTML 속성에 전달될 html 문자열
 } & TextErrorType &
-  CommonsTypes;
+  CommonsTypes &
+  RefType;
 
 // 타이틀 태그 컴포넌트 타입
 export type TitleUnitTypes = {

@@ -25,7 +25,7 @@ export default function _Input(props: InputTypes) {
     onResetConfirm,
     value,
     inputRef,
-    name,
+    readOnly,
   } = props as InputTypes;
 
   const _inputRef =
@@ -105,10 +105,13 @@ export default function _Input(props: InputTypes) {
     _itemsRef,
   };
 
+  let requiredList = ["onChangeEvent"];
+  if (readOnly) requiredList = [];
+
   return (
     <_Error
       propsList={{ ...props }}
-      requiredList={["onChangeEvent"]}
+      requiredList={requiredList}
       mouduleName="Input"
       children={<_InputUIPage {..._props} />}
     />

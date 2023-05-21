@@ -20,6 +20,7 @@ export default function SB_Input({
   isTextArea,
   delay,
   inputType,
+  readOnly,
 }: InputTypes) {
   const [text, setText] = useState("");
 
@@ -48,6 +49,7 @@ export default function SB_Input({
       isTextArea={isTextArea}
       delay={delay}
       inputType={inputType || "text"}
+      readOnly={readOnly}
     />
   );
 }
@@ -65,6 +67,7 @@ SB_Input.propTypes = {
   isTextArea: PropTypes.bool,
   delay: PropTypes.number,
   inputType: PropTypes.string,
+  readOnly: PropTypes.bool,
 };
 
 // @ts-ignore
@@ -81,4 +84,5 @@ SB_Input.defaultProps = {
   isTextArea: false,
   delay: -1,
   inputType: "text",
+  readOnly: false,
 } as InputTypes;

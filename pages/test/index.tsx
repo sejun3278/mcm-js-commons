@@ -1,4 +1,4 @@
-import React, { ChangeEvent, MutableRefObject, useRef, useState } from "react";
+import React, { MutableRefObject, useRef, useState } from "react";
 
 import {
   _SpanText,
@@ -40,9 +40,10 @@ export default function Test() {
             delay={200}
             defaultValue="aaa"
             inputRef={_ref}
+            // readOnly
             // value={text}
-            // isTextArea
-            inputType="password"
+            isTextArea
+            // inputType="password"
           />
         </form>
       </div>

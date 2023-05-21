@@ -105,3 +105,11 @@ textarea.args = {
   },
   maxLength: 100,
 } as InputTypes;
+
+// readOnly 적용
+export const readOnly = Template.bind({});
+readOnly.args = {
+  onChangeEvent: () => {},
+  defaultValue: "readOnly가 적용됩니다.",
+  readOnly: true,
+} as InputTypes;

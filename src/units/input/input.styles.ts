@@ -8,6 +8,7 @@ interface StyleTypes {
   isTextArea?: boolean;
   hasSubmitEvent?: boolean;
   hasHeight?: boolean;
+  readOnly?: boolean;
 }
 
 export const Wrapper = styled.div`
@@ -70,6 +71,13 @@ export const Items = styled.div`
   position: relative;
   overflow: hidden;
   border: solid 1px black;
+
+  .mcm-textArea-unit {
+    ${(props: StyleTypes) =>
+      props.readOnly && {
+        resize: "none",
+      }}
+  }
 `;
 
 export const Input = styled.input`

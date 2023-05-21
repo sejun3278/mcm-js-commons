@@ -1,4 +1,4 @@
-import { CSSProperties } from "react";
+import { CSSProperties, MutableRefObject } from "react";
 // 공통으로 자주 사용되는 타입 모음
 
 // className, styles 타입 저장
@@ -11,3 +11,7 @@ export interface CommonsTypes {
 export interface ChildrenType {
   children?: React.ReactNode;
 }
+
+/* ///////////////// ref 타입들 ///////////////// */
+export type PTagRefType = { _ref?: MutableRefObject<HTMLParagraphElement> };
+export type SpanTagRefType = { _ref?: MutableRefObject<HTMLSpanElement> };

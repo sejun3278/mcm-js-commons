@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, MutableRefObject } from "react";
+import { FormEvent, MutableRefObject } from "react";
 import { CommonsTypes, ChildrenType } from "../commons.type";
 
 // 버튼 컴포넌트 타입
@@ -74,4 +74,5 @@ export type InputTypes = {
   inputRef?: MutableRefObject<HTMLInputElement | HTMLTextAreaElement>; // ref 설정
   inputType?: "text" | "password"; // input(TextArea 사용 불가)에서의 타입 속성 지정
   name?: string; // name 속성 지정
+  readOnly?: boolean; // readOnly 속성 사용 여부
 } & CommonsTypes;

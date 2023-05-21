@@ -33,6 +33,7 @@ export default function _InputUIPage(props: InputTypes & InputIProps) {
     isTextArea,
     inputType,
     name,
+    readOnly,
   } = props;
 
   return (
@@ -45,7 +46,11 @@ export default function _InputUIPage(props: InputTypes & InputIProps) {
       <Fieldset>
         <legend>Input & TextArea</legend>
       </Fieldset>
-      <Items ref={_itemsRef} className="mcm-input-unit-items">
+      <Items
+        ref={_itemsRef}
+        className="mcm-input-unit-items"
+        readOnly={readOnly}
+      >
         {!isTextArea ? (
           <Input
             className={getAllComponentsClassName("mcm-input-unit", className)}
@@ -62,37 +67,45 @@ export default function _InputUIPage(props: InputTypes & InputIProps) {
             defaultValue={value || defaultValue}
             autoComplete="off"
             name={name}
+            readOnly={readOnly || false}
           />
         ) : (
           <TextArea
-            className={getAllComponentsClassName("mcm-input-unit", className)}
+            className={getAllComponentsClassName(
+              "mcm-textArea-unit",
+              className
+            )}
             placeholder={placeHolder || "텍스트를 입력해주세요."}
             maxLength={maxLength || 200}
             onChange={_onChangeEvent}
             ref={_inputRef as MutableRefObject<HTMLTextAreaElement>}
             defaultValue={value || defaultValue}
             name={name}
-          ></TextArea>
+            readOnly={readOnly || false}
+          />
         )}
-        <BtnWrapper className="mcm-input-submit-button-wrapper">
-          <BtnItems
-            // hasText={text}
-            isTextArea={isTextArea}
-            hasSubmitEvent={onSubmitEvent !== undefined}
-            className="mcm-input-submit-button-items"
-          >
-            {onSubmitEvent && (
-              <SubmitBtn
-                className="mcm-input-submit-button"
-                onClick={onSubmitEvent}
-                type="button"
-              >
-                ✔️
-              </SubmitBtn>
-            )}
-            <_CloseButton onClickEvent={resetEvent} buttonType="button" />
-          </BtnItems>
-        </BtnWrapper>
+
+        {!readOnly && (
+          <BtnWrapper className="mcm-input-submit-button-wrapper">
+            <BtnItems
+              // hasText={text}
+              isTextArea={isTextArea}
+              hasSubmitEvent={onSubmitEvent !== undefined}
+              className="mcm-input-submit-button-items"
+            >
+              {onSubmitEvent && (
+                <SubmitBtn
+                  className="mcm-input-submit-button"
+                  onClick={onSubmitEvent}
+                  type="button"
+                >
+                  ✔️
+                </SubmitBtn>
+              )}
+              <_CloseButton onClickEvent={resetEvent} buttonType="button" />
+            </BtnItems>
+          </BtnWrapper>
+        )}
       </Items>
     </Wrapper>
   );

@@ -4,9 +4,12 @@ import DOMPurify from "dompurify";
 
 import { getAllComponentsClassName } from "../../../../hooks";
 import { TextHTMLUnitTypes } from "../../../../types/units";
+import { SpanTagRefType } from "../../../../types/commons.type";
 
 // dangerouslySetInnerHTML 속성을 사용할 수 있는 Span Text Component
-export default function _SpanTextWithHtml(props: TextHTMLUnitTypes) {
+export default function _SpanTextWithHtml(
+  props: TextHTMLUnitTypes & SpanTagRefType
+) {
   const [render, setRender] = useState(false);
   const { styles, className, isError, dangerouslySetInnerHTML, _ref } = props;
 

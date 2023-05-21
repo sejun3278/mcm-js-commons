@@ -2,9 +2,10 @@ import { PText } from "..";
 
 import { getAllComponentsClassName } from "../../../hooks";
 import { TextUnitTypes } from "../../../types/units";
+import { PTagRefType } from "../../../types/commons.type";
 
 // p 태그를 출력하는 컴포넌트
-export default function _PText(props: TextUnitTypes) {
+export default function _PText(props: TextUnitTypes & PTagRefType) {
   const { styles, className, children, isError, _ref } = props;
 
   return (

@@ -12,7 +12,6 @@ export interface ChildrenType {
   children?: React.ReactNode;
 }
 
-// ref 속성 사용
-export interface RefType {
-  _ref?: MutableRefObject<HTMLElement & HTMLSpanElement & HTMLParagraphElement>;
-}
+/* ///////////////// ref 타입들 ///////////////// */
+export type PTagRefType = { _ref?: MutableRefObject<HTMLParagraphElement> };
+export type SpanTagRefType = { _ref?: MutableRefObject<HTMLSpanElement> };

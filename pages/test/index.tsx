@@ -1,4 +1,4 @@
-import React, { MutableRefObject, useRef, useState } from "react";
+import React, { MutableRefObject, Ref, useRef, useState } from "react";
 
 import {
   _SpanText,
@@ -16,7 +16,8 @@ import _SpanTextWithHTML from "../../src/units/text/span/html";
 
 export default function Test() {
   const [text, setText] = useState("bbb");
-  const _ref = useRef() as MutableRefObject<HTMLInputElement>;
+  // const _ref = useRef() as MutableRefObject<HTMLInputElement>;
+  const _ref = useRef() as MutableRefObject<HTMLSpanElement>;
 
   const _submit = (e) => {
     e.preventDefault();
@@ -30,7 +31,11 @@ export default function Test() {
 
   return (
     <>
-      <button onClick={() => changeEvent("")}>초기화</button>
+      <_SpanTextWithHTML
+        dangerouslySetInnerHTML="111"
+        _ref={_ref}
+      ></_SpanTextWithHTML>
+      {/* <button onClick={() => changeEvent("")}>초기화</button>
       <div>
         <form onSubmit={_submit}>
           <_Input
@@ -46,7 +51,7 @@ export default function Test() {
             // inputType="password"
           />
         </form>
-      </div>
+      </div> */}
 
       {/* <input /> */}
       {/* <_CloseButton onClickEvent={() => alert(1)} buttonType="button" /> */}

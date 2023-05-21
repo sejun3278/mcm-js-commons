@@ -29,6 +29,7 @@ export default function Test() {
     setText(text);
   };
 
+  console.log(_ref);
   return (
     <>
       <_SpanTextWithHTML

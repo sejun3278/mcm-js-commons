@@ -20,6 +20,7 @@ import { MutableRefObject } from "react";
 export default function _InputUIPage(props: InputTypes & InputIProps) {
   const {
     className,
+    inputClassName,
     styles,
     _onChangeEvent,
     onSubmitEvent,
@@ -38,7 +39,7 @@ export default function _InputUIPage(props: InputTypes & InputIProps) {
 
   return (
     <Wrapper
-      className="mcm-input-unit-wrapper"
+      className={getAllComponentsClassName("mcm-input-unit-wrapper", className)}
       hasSubmitEvent={onSubmitEvent !== undefined}
       isTextArea={isTextArea}
       style={styles}
@@ -53,7 +54,10 @@ export default function _InputUIPage(props: InputTypes & InputIProps) {
       >
         {!isTextArea ? (
           <Input
-            className={getAllComponentsClassName("mcm-input-unit", className)}
+            className={getAllComponentsClassName(
+              "mcm-input-unit",
+              inputClassName
+            )}
             type={inputType || "text"}
             placeholder={
               placeHolder ||
@@ -73,7 +77,7 @@ export default function _InputUIPage(props: InputTypes & InputIProps) {
           <TextArea
             className={getAllComponentsClassName(
               "mcm-textArea-unit",
-              className
+              inputClassName
             )}
             placeholder={placeHolder || "텍스트를 입력해주세요."}
             maxLength={maxLength || 200}

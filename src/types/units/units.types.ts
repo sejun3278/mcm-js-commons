@@ -75,4 +75,5 @@ export type InputTypes = {
   inputType?: "text" | "password"; // input(TextArea 사용 불가)에서의 타입 속성 지정
   name?: string; // name 속성 지정
   readOnly?: boolean; // readOnly 속성 사용 여부
+  inputClassName?: string; // input 또는 textArea에 지정될 className
 } & CommonsTypes;

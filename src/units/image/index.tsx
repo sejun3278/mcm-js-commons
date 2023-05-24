@@ -6,7 +6,7 @@ import _Error from "../error";
 
 // img 태그를 이용한 이미지 컴포넌트, 오른쪽 버튼 비활성화 기능
 export default function _Image(props: ImageUnitTypes) {
-  const { src, styles, className } = props;
+  const { src, styles, className, id } = props;
 
   return (
     <_Error
@@ -16,6 +16,7 @@ export default function _Image(props: ImageUnitTypes) {
     >
       <Img
         className={getAllComponentsClassName("mcm-image-unit", className)}
+        id={id}
         src={src}
         style={styles}
       />

@@ -6,6 +6,7 @@ export type ButtonUnitTypes = {
   onClickEvent: () => void; // 실행할 클릭 이벤트
   isDisable?: boolean; // 비활성화 여부, true일 경우 비활성화 (default : false)
   buttonType?: "button" | "submit" | "reset"; // 버튼의 type 속성 지정 (default : submit)
+  buttonRef?: MutableRefObject<HTMLButtonElement>;
 } & CommonsTypes &
   ChildrenType;
 
@@ -75,4 +76,5 @@ export type InputTypes = {
   inputType?: "text" | "password"; // input(TextArea 사용 불가)에서의 타입 속성 지정
   name?: string; // name 속성 지정
   readOnly?: boolean; // readOnly 속성 사용 여부
+  inputClassName?: string; // input 또는 textArea에 지정될 className
 } & CommonsTypes;

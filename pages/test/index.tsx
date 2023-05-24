@@ -31,10 +31,11 @@ export default function Test() {
 
   return (
     <>
-      <_SpanTextWithHTML
+      <_Button onClickEvent={() => {}}>222</_Button>
+      {/* <_SpanTextWithHTML
         dangerouslySetInnerHTML="111"
         _ref={_ref}
-      ></_SpanTextWithHTML>
+      ></_SpanTextWithHTML> */}
       {/* <button onClick={() => changeEvent("")}>초기화</button>
       <div>
         <form onSubmit={_submit}>

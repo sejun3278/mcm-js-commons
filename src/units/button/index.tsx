@@ -8,8 +8,16 @@ import { ButtonUnitTypes } from "../../types/units";
 
 // button 태그로 렌더하는 컴포넌트
 export default function _Button(props: ButtonUnitTypes) {
-  const { children, className, onClickEvent, styles, isDisable, buttonType } =
-    props;
+  const {
+    children,
+    className,
+    id,
+    onClickEvent,
+    styles,
+    isDisable,
+    buttonType,
+    buttonRef,
+  } = props;
 
   return (
     <_Error
@@ -19,11 +27,13 @@ export default function _Button(props: ButtonUnitTypes) {
     >
       <Button
         className={getAllComponentsClassName("cmm-button-unit", className)}
+        id={id}
         onClick={(!isDisable && onClickEvent) || undefined}
         role="button_click_event"
         style={styles}
         isDisable={isDisable}
         type={buttonType || "submit"}
+        ref={buttonRef}
       >
         {children}
       </Button>

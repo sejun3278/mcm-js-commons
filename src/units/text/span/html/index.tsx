@@ -11,7 +11,8 @@ export default function _SpanTextWithHtml(
   props: TextHTMLUnitTypes & SpanTagRefType
 ) {
   const [render, setRender] = useState(false);
-  const { styles, className, isError, dangerouslySetInnerHTML, _ref } = props;
+  const { styles, className, id, isError, dangerouslySetInnerHTML, _ref } =
+    props;
 
   useEffect(() => {
     // window 객체가 있을 때만 해당 컴포넌트 렌더하기
@@ -27,6 +28,7 @@ export default function _SpanTextWithHtml(
       <SpanText
         style={styles}
         className={getAllComponentsClassName("mcm-span-unit", className)}
+        id={id}
         isError={isError}
         ref={_ref}
         dangerouslySetInnerHTML={{

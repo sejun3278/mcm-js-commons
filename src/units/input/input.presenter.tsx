@@ -20,6 +20,7 @@ import { MutableRefObject } from "react";
 export default function _InputUIPage(props: InputTypes & InputIProps) {
   const {
     className,
+    id,
     inputClassName,
     styles,
     _onChangeEvent,
@@ -40,6 +41,7 @@ export default function _InputUIPage(props: InputTypes & InputIProps) {
   return (
     <Wrapper
       className={getAllComponentsClassName("mcm-input-unit-wrapper", className)}
+      id={id}
       hasSubmitEvent={onSubmitEvent !== undefined}
       isTextArea={isTextArea}
       style={styles}

@@ -7,6 +7,7 @@ export default function _Title({
   children,
   styles,
   className,
+  id,
   titleLevel,
 }: TitleUnitTypes) {
   // 렌더할 태그명
@@ -29,7 +30,7 @@ export default function _Title({
   }
 
   return (
-    <TitleTag className={_className} style={_styles}>
+    <TitleTag className={_className} style={_styles} id={id}>
       {children}
     </TitleTag>
   );

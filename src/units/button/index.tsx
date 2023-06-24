@@ -26,7 +26,7 @@ export default function _Button(props: ButtonUnitTypes) {
       mouduleName="_Button"
     >
       <Button
-        className={getAllComponentsClassName("cmm-button-unit", className)}
+        className={getAllComponentsClassName("mcm-button-unit", className)}
         id={id}
         onClick={(!isDisable && onClickEvent) || undefined}
         role="button_click_event"

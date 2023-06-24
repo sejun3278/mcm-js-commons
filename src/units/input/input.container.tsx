@@ -53,7 +53,7 @@ export default function _Input(props: InputTypes) {
   const _onChangeEvent = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    const text = e.target.value.trim();
+    const text = e.target.value;
 
     window.clearTimeout(_debounce);
     // 디바운싱 적용하기

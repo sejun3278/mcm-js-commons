@@ -1,4 +1,10 @@
-import React, { MutableRefObject, Ref, useRef, useState } from "react";
+import React, {
+  MouseEvent,
+  MutableRefObject,
+  Ref,
+  useRef,
+  useState,
+} from "react";
 
 import {
   _SpanText,
@@ -10,6 +16,7 @@ import {
   _Image,
   _CloseButton,
   _Input,
+  _Error,
 } from "../../src";
 import _PtextHTML from "../../src/units/text/p/html";
 import _SpanTextWithHTML from "../../src/units/text/span/html";
@@ -29,9 +36,23 @@ export default function Test() {
     setText(text);
   };
 
+  const clickEvent = (e?: MouseEvent) => {
+    if (e) e.stopPropagation();
+    console.log(e);
+    clickEvent2();
+  };
+
+  const clickEvent2 = () => {
+    console.log(123);
+  };
+
   return (
     <>
-      <_Button onClickEvent={() => {}}>222</_Button>
+      <_Input inputClassName="111" isTextArea onChangeEvent={() => {}} />
+      <_Button onClickEvent={clickEvent}>테스트</_Button>
+      <_Error errorMessage="asdasd"></_Error>
+
+      {/* <_Button onClickEvent={() => {}}>222</_Button> */}
       {/* <_SpanTextWithHTML
         dangerouslySetInnerHTML="111"
         _ref={_ref}

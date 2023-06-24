@@ -38,6 +38,12 @@ export default function _InputUIPage(props: InputTypes & InputIProps) {
     readOnly,
   } = props;
 
+  // input에 부여될 클래스
+  const _inputClass = getAllComponentsClassName(
+    isTextArea ? "mcm-textArea-unit" : "mcm-input-unit",
+    inputClassName
+  );
+
   return (
     <Wrapper
       className={getAllComponentsClassName("mcm-input-unit-wrapper", className)}
@@ -56,10 +62,7 @@ export default function _InputUIPage(props: InputTypes & InputIProps) {
       >
         {!isTextArea ? (
           <Input
-            className={getAllComponentsClassName(
-              "mcm-input-unit",
-              inputClassName
-            )}
+            className={_inputClass}
             type={inputType || "text"}
             placeholder={
               placeHolder ||
@@ -77,10 +80,7 @@ export default function _InputUIPage(props: InputTypes & InputIProps) {
           />
         ) : (
           <TextArea
-            className={getAllComponentsClassName(
-              "mcm-textArea-unit",
-              inputClassName
-            )}
+            className={_inputClass}
             placeholder={placeHolder || "텍스트를 입력해주세요."}
             maxLength={maxLength || 200}
             onChange={_onChangeEvent}

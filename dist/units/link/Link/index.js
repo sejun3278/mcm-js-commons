@@ -25,8 +25,8 @@ var hooks_1 = require("../../../hooks");
 var error_1 = __importDefault(require("../../error"));
 // router 이동 관련 컴포넌트
 function _Link(props) {
-    var href = props.href, children = props.children, className = props.className, id = props.id, styles = props.styles;
-    return ((0, jsx_runtime_1.jsx)(error_1.default, __assign({ propsList: __assign({}, props), requiredList: ["href"], mouduleName: "_Link" }, { children: (0, jsx_runtime_1.jsx)(LinkComponent, __assign({ passHref: true, href: href, className: (0, hooks_1.getAllComponentsClassName)("mcm-link-unit", className), id: id, style: styles }, { children: children })) })));
+    var href = props.href, children = props.children, className = props.className, id = props.id, styles = props.styles, replace = props.replace;
+    return ((0, jsx_runtime_1.jsx)(error_1.default, __assign({ propsList: __assign({}, props), requiredList: ["href"], mouduleName: "_Link" }, { children: (0, jsx_runtime_1.jsx)(LinkComponent, __assign({ passHref: true, href: href, className: (0, hooks_1.getAllComponentsClassName)("mcm-link-unit", className), id: id, style: styles, replace: replace || false }, { children: children })) })));
 }
 exports.default = _Link;
 var LinkComponent = (0, styled_1.default)(link_1.default)(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  cursor: pointer;\n"], ["\n  cursor: pointer;\n"])));

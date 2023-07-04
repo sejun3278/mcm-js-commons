@@ -107,6 +107,11 @@ export const BtnWrapper = styled.div`
   visibility: hidden;
   opacity: 0;
   cursor: default;
+  position: relative;
+
+  @media ${breakPoints.mobileLarge} {
+    display: none;
+  }
 `;
 
 export const BtnItems = styled.div`

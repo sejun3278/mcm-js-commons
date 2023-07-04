@@ -28,6 +28,7 @@ export type AnchorUnitTypes = {
 } & CommonsTypes & ChildrenType;
 export type LinkUnitTypes = {
     href: string;
+    replace?: boolean;
 } & CommonsTypes & ChildrenType;
 export type CloseButtonTypes = {
     buttonSize?: string;

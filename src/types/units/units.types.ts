@@ -50,6 +50,7 @@ export type AnchorUnitTypes = {
 // Link 태그 컴포넌트 타입
 export type LinkUnitTypes = {
   href: string; // 이동할 페이지
+  replace?: boolean; // replace 사용 여부
 } & CommonsTypes &
   ChildrenType;
 

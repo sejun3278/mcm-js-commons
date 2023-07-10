@@ -17,6 +17,7 @@ import {
   _CloseButton,
   _Input,
   _Error,
+  _Checkbox,
 } from "../../src";
 import _PtextHTML from "../../src/units/text/p/html";
 import _SpanTextWithHTML from "../../src/units/text/span/html";
@@ -48,10 +49,16 @@ export default function Test() {
 
   return (
     <>
-      <_Input inputClassName="111" isTextArea onChangeEvent={() => {}} />
-      <_Button onClickEvent={clickEvent}>테스트</_Button>
-      <_Error errorMessage="asdasd"></_Error>
+      <_Checkbox
+        inputId="aaa"
+        isChecked
+        onChangeEvent={() => {}}
+        mainColor="red"
+      />
 
+      {/* <_Input inputClassName="111" isTextArea onChangeEvent={() => {}} />
+      <_Button onClickEvent={clickEvent}>테스트</_Button>
+      <_Error errorMessage="asdasd"></_Error> */}
       {/* <_Button onClickEvent={() => {}}>222</_Button> */}
       {/* <_SpanTextWithHTML
         dangerouslySetInnerHTML="111"
@@ -74,10 +81,8 @@ export default function Test() {
           />
         </form>
       </div> */}
-
       {/* <input /> */}
       {/* <_CloseButton onClickEvent={() => alert(1)} buttonType="button" /> */}
-
       {/* <_Anchor>???</_Anchor>
       <_Link>???</_Link>
       <_Image />

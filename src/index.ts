@@ -11,6 +11,7 @@ import _Link from "./units/link/Link"; // Link 태그
 import _CloseButton from "./units/button/close"; // CloseButton 태그
 import _Error from "./units/error";
 import _Input from "./units/input/input.container";
+import _Checkbox from "./units/checkbox";
 
 export {
   _Button,
@@ -26,4 +27,5 @@ export {
   _CloseButton,
   _Error,
   _Input,
+  _Checkbox,
 };

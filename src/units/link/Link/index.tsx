@@ -7,7 +7,12 @@ import _Error from "../../error";
 
 // router 이동 관련 컴포넌트
 export default function _Link(props: LinkUnitTypes) {
-  const { href, children, className, id, styles } = props;
+  const { children, className, replace } = props;
+
+  const _props: LinkUnitTypes = { ...props };
+  // className 지정
+  _props.className = getAllComponentsClassName("mcm-link-unit", className);
+  _props.replace = replace ? true : false;
 
   return (
     <_Error
@@ -15,13 +20,7 @@ export default function _Link(props: LinkUnitTypes) {
       requiredList={["href"]}
       mouduleName="_Link"
     >
-      <LinkComponent
-        passHref={true}
-        href={href}
-        className={getAllComponentsClassName("mcm-link-unit", className)}
-        id={id}
-        style={styles}
-      >
+      <LinkComponent passHref={true} {..._props}>
         {children}
       </LinkComponent>
     </_Error>

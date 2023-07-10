@@ -6,7 +6,10 @@ import _Error from "../../error";
 
 // a태그를 사용해 타 웹 사이트 이동
 export default function _Anchor(props: AnchorUnitTypes) {
-  const { children, href, className, id, notTarget, styles } = props;
+  const { children, className, notTarget } = props;
+
+  const _props: AnchorUnitTypes = { ...props };
+  _props.className = getAllComponentsClassName("mcm-anchor-unit", className);
 
   return (
     <_Error
@@ -15,12 +18,9 @@ export default function _Anchor(props: AnchorUnitTypes) {
       mouduleName="_Anchor"
     >
       <Anchor
-        style={styles}
-        href={href}
         target={notTarget ? "_self" : "_blank"}
         rel="noreferrer"
-        className={getAllComponentsClassName("mcm-anchor-unit", className)}
-        id={id}
+        {..._props}
       >
         {children}
       </Anchor>

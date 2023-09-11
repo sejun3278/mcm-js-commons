@@ -15,13 +15,22 @@ export default function _Checkbox(props: {
     label?: string;
   };
   mainColor?: string; // 체크시 사용될 색상
+  readOnly?: boolean; // 작동 중지 여부
 }) {
-  const { inputId, labelId, onChangeEvent, isChecked, classNames, mainColor } =
-    props;
+  const {
+    inputId,
+    labelId,
+    onChangeEvent,
+    isChecked,
+    classNames,
+    mainColor,
+    readOnly,
+  } = props;
   const [checked, setChecked] = useState(false);
 
   // 체크 토글하기
   const toggleChekced = () => {
+    if (readOnly) return;
     setChecked((prev) => !prev);
     if (onChangeEvent) onChangeEvent();
   };
@@ -51,6 +60,7 @@ export default function _Checkbox(props: {
           htmlFor={inputId}
           isChecked={checked}
           mainColor={mainColor || "#00c4ff"}
+          readOnly={readOnly}
         />
       </>
     </_Error>
@@ -60,6 +70,7 @@ export default function _Checkbox(props: {
 interface StyleTypes {
   isChecked?: boolean;
   mainColor?: string;
+  readOnly?: boolean;
 }
 
 export const Input = styled.input`
@@ -69,12 +80,12 @@ export const Input = styled.input`
 
 export const Label = styled.label`
   display: inline-block;
-  width: 20px;
-  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
   border: 2px solid #bcbcbc;
   border-color: ${(props: StyleTypes) => props.isChecked && props.mainColor};
   border-radius: 100%;
-  cursor: pointer;
+  cursor: ${(props) => (props.readOnly ? "default" : "pointer")};
   transition: all 0.25s ease;
   position: relative;
 

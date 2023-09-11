@@ -1,4 +1,5 @@
 import React, {
+  ChangeEvent,
   MouseEvent,
   MutableRefObject,
   Ref,
@@ -47,14 +48,27 @@ export default function Test() {
     console.log(123);
   };
 
+  const test = (e?: MouseEvent<HTMLButtonElement>) => {
+    console.log(e);
+  };
+
   return (
     <>
+      <_Button onClickEvent={test}>22</_Button>
       <_Checkbox
         inputId="aaa"
         isChecked
         onChangeEvent={() => {}}
         mainColor="red"
+        readOnly
       />
+      <_Error
+        propsList={{ children: [<div>1</div>, <div>2</div>] }}
+        requiredList={["children"]}
+        mouduleName="aaa"
+      >
+        <div>asdasd</div>
+      </_Error>
 
       {/* <_Input inputClassName="111" isTextArea onChangeEvent={() => {}} />
       <_Button onClickEvent={clickEvent}>테스트</_Button>
